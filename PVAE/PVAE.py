@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from utils import celoss, SelfAttention
+from .utils import celoss, SelfAttention
 
 
 class pVAE(nn.Module):
