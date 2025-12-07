@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from .utils import celoss, SelfAttention
+from utils import celoss, SelfAttention
 
 class PVAE2(nn.Module):
 
@@ -14,7 +14,6 @@ class PVAE2(nn.Module):
 
         self.input_dim_dna = input_dim_dna
         self.input_dim_gene = input_dim_gene
-        self.chromosome_filters = chromosome_filters
         self.hls_dna = hls_dna
         self.hls_gene = hls_gene
         self.hl_bottleneck = hl_bottleneck
