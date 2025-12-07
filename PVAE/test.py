@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from torch import optim
 from PVAE2 import PVAE2
-from PVAE import pVAE
+from PVAE import PVAE
 from dataloader import return_dataloaders
 
 
@@ -96,10 +96,10 @@ def main():
         seed=42,
     )
 
-    np.save("synthetic_dna_meth.npy", dna_meth_np)
-    np.save("synthetic_gene_exp.npy", gene_exp_np)
-    np.save("synthetic_chrom_filters.npy", chrom_filters)
-    print("Saved synthetic data to: synthetic_dna_meth.npy, synthetic_gene_exp.npy, synthetic_chrom_filters.npy")
+    # np.save("synthetic_dna_meth.npy", dna_meth_np)
+    # np.save("synthetic_gene_exp.npy", gene_exp_np)
+    # np.save("synthetic_chrom_filters.npy", chrom_filters)
+    # print("Saved synthetic data to: synthetic_dna_meth.npy, synthetic_gene_exp.npy, synthetic_chrom_filters.npy")
 
     print(dna_meth_np[:5,:5])
     print(gene_exp_np[:5,:5])
