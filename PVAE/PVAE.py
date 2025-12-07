@@ -3,10 +3,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from .utils import celoss, SelfAttention
+from utils import celoss, SelfAttention
 
 
-class pVAE(nn.Module):
+class PVAE(nn.Module):
 
     def __init__(self, input_dim_dna : int, input_dim_gene : int, hls_dna : tuple, hls_gene : tuple, hl_bottleneck : int, z_dim : int, use_self_attn=False):
         """ input_dim_meth : input dimension of a single DNA Methylation vector
