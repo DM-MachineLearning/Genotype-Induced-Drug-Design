@@ -179,7 +179,7 @@ class PVAE(nn.Module):
         best_state = None
         epochs_no_improve = 0
 
-        for epoch in range(1, epoch+1):
+        for epoch in range(1, num_epochs+1):
             self.train()
             epoch_loss = 0.0
             num_batches = 0
