@@ -1,0 +1,877 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+
+\geometry{margin=1in}
+
+% Theorem environments for proofs of concept
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{proofofconcept}{Proof of Concept}[section]
+
+\title{Mathematical Modeling of Genotype-Guided De Novo Molecule Generation}
+\author{Multi-Omics Drug Discovery Project}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction and Problem Formulation}
+
+\subsection{Problem Statement}
+
+Traditional target-based drug discovery approaches focus on protein-specific information to generate new molecules. However, this methodology has significant limitations:
+
+\begin{itemize}
+    \item \textbf{Ignoring biological context}: Target-based models ignore gene expression context and pathway rewiring
+    \item \textbf{High rejection rate}: Generated molecules often fail in clinical trials due to lack of disease specificity
+    \item \textbf{Toxicity and side effects}: Off-target and on-target side effects are not adequately predicted
+    \item \textbf{Poor efficacy prediction}: Models fail to predict true efficacy and toxicity in biological systems
+\end{itemize}
+
+The biological context of cancer lies in the broader picture of cell biology, incorporating:
+\begin{itemize}
+    \item Transcriptomic signatures
+    \item Metabolic pathways
+    \item Genetic mutations
+    \item System-level regulatory networks
+\end{itemize}
+
+\subsection{Hypothesis}
+
+If we condition molecule generation on transcriptomic profiles, the model can learn to design molecules specifically effective for that cancer profile. This approach leverages the central dogma of molecular biology:
+
+\[
+\text{DNA (mutations)} \rightarrow \text{RNA (transcriptome shift)} \rightarrow \text{Protein (abnormal functions)} \rightarrow \text{System level (pathway misregulation)}
+\]
+
+\subsection{Objectives}
+
+\begin{enumerate}
+    \item Build a generative model to generate new anticancer molecules based only on gene expression profiles for a particular cancer type
+    \item Use reinforcement learning to ensure generated molecules have high efficacy (low IC50)
+    \item Integrate multi-omics data (genomics, transcriptomics) into the generation pipeline
+\end{enumerate}
+
+\subsection{Mathematical Notation}
+
+Throughout this document, we use the following notation:
+
+\begin{itemize}
+    \item $x_p \in \mathbb{R}^{G}$: Gene expression profile vector with $G$ genes
+    \item $x_c$: SMILES sequence (tokenized molecular representation)
+    \item $z_p \in \mathbb{R}^{d_p}$: Latent representation of profile (Profile VAE)
+    \item $z_c \in \mathbb{R}^{d_c}$: Latent representation of molecule (SMILES VAE)
+    \item $z \in \mathbb{R}^{d}$: Combined latent representation
+    \item $C_T$: Complete generated molecule at time $T$
+    \item $S_t$: State at time step $t$ during generation
+    \item $a_t$: Action (token) at time step $t$
+    \item $\mu_p, \sigma_p^2$: Mean and variance of profile latent distribution
+    \item $\mu_c, \sigma_c^2$: Mean and variance of molecule latent distribution
+    \item $\theta$: Decoder parameters
+    \item $\phi_p$: Profile encoder parameters
+    \item $\phi_c$: SMILES encoder parameters
+    \item $f(C_T, x_c)$: IC50 prediction function
+    \item $R(S_T)$: Reward function
+    \item $\alpha$: Temperature parameter for reward function
+    \item $\beta_p, \beta_c$: KL divergence weights for PVAE and SVAE
+    \item $\lambda$: Reinforcement learning loss weight
+\end{itemize}
+
+\section{Architecture Overview}
+
+\subsection{Dual VAE System}
+
+The architecture consists of two Variational Autoencoders (VAEs)~\cite{kingma2014autoencoding} that are pretrained separately and then jointly fine-tuned:
+
+\begin{enumerate}
+    \item \textbf{Profile VAE (PVAE)}: Encodes transcriptomic profiles into latent space
+    \item \textbf{SMILES VAE (SVAE)}: Encodes molecular structures (SMILES) into latent space
+\end{enumerate}
+
+\subsection{Data Flow}
+
+\begin{itemize}
+    \item \textbf{Pretraining Phase}:
+    \begin{itemize}
+        \item PVAE: Trained on TCGA (The Cancer Genome Atlas)~\cite{icahn2014tcga} transcriptomic data
+        \item SVAE: Trained on ChEMBL~\cite{gaulton2012chembl} molecular database
+    \end{itemize}
+    \item \textbf{Fine-tuning Phase}:
+    \begin{itemize}
+        \item Joint training on GDSC (Genomics of Drug Sensitivity in Cancer)~\cite{icahn2012gdsc} dataset
+        \item GDSC provides: (cell line, drug, IC50) triplets with transcriptomic profiles
+    \end{itemize}
+\end{itemize}
+
+\subsection{Integration Mechanism}
+
+The genetic embedding $z_p$ and SMILES embedding $z_c$ are combined using Gaussian addition:
+
+\[
+z = z_p + z_c
+\]
+
+where $z_p \sim \mathcal{N}(\mu_p, \sigma_p^2)$ and $z_c \sim \mathcal{N}(\mu_c, \sigma_c^2)$.
+
+The combined latent $z$ is then decoded using the SMILES decoder to generate new molecules conditioned on the transcriptomic profile.
+
+\section{Profile VAE (PVAE) - Transcriptomic Encoder}
+
+\subsection{Input Representation}
+
+The Profile VAE takes gene expression profiles as input:
+
+\[
+x_p \in \mathbb{R}^{G}
+\]
+
+where $G$ is the number of genes (typically $\sim 20,000$ genes from TCGA). The expression values are log2-normalized abundances.
+
+\subsection{Encoder Architecture}
+
+The encoder maps the gene expression profile to a latent distribution:
+
+\[
+q_{\phi_p}(z_p | x_p) = \mathcal{N}(z_p; \mu_p(x_p), \sigma_p^2(x_p))
+\]
+
+where:
+\begin{align}
+\mu_p(x_p) &= \text{Encoder}_{\mu}(x_p; \phi_p) \\
+\sigma_p^2(x_p) &= \text{Encoder}_{\sigma}(x_p; \phi_p)
+\end{align}
+
+\subsection{Transformer Encoder for Profiles}
+
+Following the Transformer VAE architecture~\cite{yoshikai2020transformer}, the profile encoder uses:
+
+\begin{enumerate}
+    \item \textbf{Input Projection}: $x_p \rightarrow E_p \in \mathbb{R}^{L \times d_{model}}$ where $L$ is sequence length (genes can be treated as sequence or flattened)
+    \item \textbf{Positional Encoding}: Sinusoidal positional encodings
+    \item \textbf{Multi-Head Self-Attention}~\cite{vaswani2017attention}: 
+    \[
+    \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+    \]
+    \item \textbf{Feedforward Network}: 
+    \[
+    \text{FFN}(x) = \text{NewGELU}(W_2 \cdot \text{NewGELU}(W_1 x + b_1) + b_2)
+    \]
+    \item \textbf{Pooling}: Mean, start, and max pooling concatenated
+    \item \textbf{Latent Projection}: Pooled features $\rightarrow$ $(\mu_p, \sigma_p^2)$
+\end{enumerate}
+
+\subsection{NewGELU Activation}
+
+The NewGELU activation function is defined as:
+
+\[
+\text{NewGELU}(x) = 0.5x \left(1 + \tanh\left(\sqrt{\frac{2}{\pi}}\left(x + 0.044715x^3\right)\right)\right)
+\]
+
+\subsection{Loss Function}
+
+The PVAE loss consists of reconstruction and KL divergence terms:
+
+\[
+\mathcal{L}_{PVAE} = \mathcal{L}_{recon}^p + \beta_p \mathcal{L}_{KL}^p
+\]
+
+where:
+\begin{align}
+\mathcal{L}_{recon}^p &= -\mathbb{E}_{z_p \sim q_{\phi_p}}[\log p_{\theta_p}(x_p | z_p)] \\
+\mathcal{L}_{KL}^p &= \text{KL}(q_{\phi_p}(z_p | x_p) \| p(z_p))
+\end{align}
+
+Assuming a standard normal prior $p(z_p) = \mathcal{N}(0, I)$:
+
+\[
+\mathcal{L}_{KL}^p = \frac{1}{2}\sum_{i=1}^{d_p}\left[\mu_{p,i}^2 + \sigma_{p,i}^2 - \log(\sigma_{p,i}^2) - 1\right]
+\]
+
+\section{SMILES VAE (SVAE) - Molecular Encoder}
+
+\subsection{Input Representation}
+
+SMILES sequences are tokenized into discrete tokens:
+
+\[
+x_c = [t_1, t_2, \ldots, t_L]
+\]
+
+where $t_i \in \{1, 2, \ldots, V\}$ and $V$ is the vocabulary size (typically 45 tokens including special tokens: padding, start, end).
+
+\subsection{Encoder Architecture}
+
+The SMILES encoder follows the Transformer VAE architecture:
+
+\[
+q_{\phi_c}(z_c | x_c) = \mathcal{N}(z_c; \mu_c(x_c), \sigma_c^2(x_c))
+\]
+
+\subsection{Positional Encoding}
+
+Sinusoidal positional encodings are added to token embeddings:
+
+\[
+PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d_{model}}}\right)
+\]
+
+\[
+PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d_{model}}}\right)
+\]
+
+where $pos$ is the position and $i$ is the dimension index.
+
+\subsection{Multi-Head Attention}
+
+For $h$ attention heads~\cite{vaswani2017attention}, each head computes:
+
+\[
+\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+\]
+
+\[
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)W^O
+\]
+
+where $W_i^Q, W_i^K, W_i^V \in \mathbb{R}^{d_{model} \times d_k}$ and $W^O \in \mathbb{R}^{hd_k \times d_{model}}$.
+
+\subsection{Pooling Strategy}
+
+The encoder uses NoAffinePooler that concatenates three pooling strategies:
+
+\begin{align}
+\text{pooled} &= [\text{mean\_pooled}; \text{start\_token}; \text{max\_pooled}] \\
+\text{mean\_pooled} &= \frac{1}{L}\sum_{i=1}^{L} h_i \\
+\text{start\_token} &= h_1 \\
+\text{max\_pooled} &= \max_{i=1}^{L} h_i
+\end{align}
+
+where $h_i$ are the hidden states from the Transformer encoder.
+
+\subsection{Reparameterization Trick}
+
+To enable backpropagation through the stochastic latent variable~\cite{kingma2014autoencoding}:
+
+\[
+z_c = \mu_c + \sigma_c \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)
+\]
+
+This allows gradients to flow through the sampling operation.
+
+\subsection{Loss Function}
+
+The SVAE loss:
+
+\[
+\mathcal{L}_{SVAE} = \mathcal{L}_{recon}^c + \beta_c \mathcal{L}_{KL}^c
+\]
+
+where:
+\begin{align}
+\mathcal{L}_{recon}^c &= -\sum_{t=1}^{L}\log p_{\theta_c}(t_t | z_c, t_{<t}) \\
+\mathcal{L}_{KL}^c &= \frac{1}{2}\sum_{i=1}^{d_c}\left[\mu_{c,i}^2 + \sigma_{c,i}^2 - \log(\sigma_{c,i}^2) - 1\right]
+\end{align}
+
+The reconstruction loss is the cross-entropy over the vocabulary for each token position.
+
+\section{Latent Space Integration}
+
+\subsection{Gaussian Addition}
+
+The primary integration method combines latent representations through Gaussian addition:
+
+\[
+z = z_p + z_c
+\]
+
+Given $z_p \sim \mathcal{N}(\mu_p, \Sigma_p)$ and $z_c \sim \mathcal{N}(\mu_c, \Sigma_c)$, the sum follows:
+
+\[
+z \sim \mathcal{N}(\mu_p + \mu_c, \Sigma_p + \Sigma_c)
+\]
+
+For diagonal covariance matrices:
+
+\[
+z \sim \mathcal{N}(\mu_p + \mu_c, \text{diag}(\sigma_p^2 + \sigma_c^2))
+\]
+
+\subsection{Alternative Integration Methods}
+
+\subsubsection{Concatenation}
+
+\[
+z = [z_p; z_c] \in \mathbb{R}^{d_p + d_c}
+\]
+
+This doubles the latent dimension but preserves all information from both modalities.
+
+\subsubsection{Cross-Attention Mechanism}
+
+Use cross-attention to allow the profile to attend to molecular features:
+
+\[
+z = \text{CrossAttention}(z_p, z_c) = \text{softmax}\left(\frac{z_p z_c^T}{\sqrt{d}}\right)z_c
+\]
+
+\subsubsection{Product of Experts}
+
+\[
+p(z) \propto p_p(z) \cdot p_c(z)
+\]
+
+where $p_p(z) = \mathcal{N}(\mu_p, \sigma_p^2)$ and $p_c(z) = \mathcal{N}(\mu_c, \sigma_c^2)$.
+
+For Gaussian experts, the product is also Gaussian:
+
+\[
+p(z) = \mathcal{N}\left(\frac{\mu_p/\sigma_p^2 + \mu_c/\sigma_c^2}{1/\sigma_p^2 + 1/\sigma_c^2}, \frac{1}{1/\sigma_p^2 + 1/\sigma_c^2}\right)
+\]
+
+\subsubsection{Weighted Combination}
+
+\[
+z = \alpha z_p + (1-\alpha) z_c, \quad \alpha \in [0,1]
+\]
+
+This allows controlling the relative importance of profile vs. molecule information.
+
+\subsection{Proof of Concept: Information Preservation in Gaussian Addition}
+
+\begin{proofofconcept}[Information Preservation]
+Gaussian addition preserves information from both modalities when the latent dimensions are aligned. The combined distribution has:
+\begin{itemize}
+    \item Mean: $\mu_p + \mu_c$ (additive combination of means)
+    \item Variance: $\sigma_p^2 + \sigma_c^2$ (additive combination of variances)
+\end{itemize}
+
+This preserves the first two moments of both distributions, allowing the decoder to access information from both the transcriptomic profile and molecular structure.
+\end{proofofconcept}
+
+\section{Decoder Architecture}
+
+\subsection{Decoder Definition}
+
+The decoder reconstructs molecules from the combined latent representation:
+
+\[
+q_{\theta}(x' | z_p + z_c) = q_{\theta}(x' | z)
+\]
+
+where $x'$ is the generated SMILES sequence.
+
+\subsection{Autoregressive Generation}
+
+Molecule generation proceeds autoregressively:
+
+\[
+p(S_T) = \prod_{t=1}^{T} p(a_t | S_{t-1})
+\]
+
+where:
+\begin{itemize}
+    \item $S_t$ is the state at time $t$
+    \item $a_t$ is the action (token) at time $t$
+    \item $T$ is the total sequence length
+\end{itemize}
+
+\subsection{State Representation}
+
+The state at time $t$ is defined as:
+
+\[
+S_t = \text{tuple}(C_t, x_c)
+\]
+
+where:
+\begin{itemize}
+    \item $C_t$ is the partially generated molecule up to time $t$
+    \item $x_c$ is the conditioning transcriptomic profile (encoded as $z_p$)
+\end{itemize}
+
+\subsection{Transformer Decoder}
+
+The decoder uses masked self-attention to ensure causal generation:
+
+\[
+\text{MaskedAttention}(Q, K, V) = \text{softmax}\left(\frac{QK^T + M}{\sqrt{d_k}}\right)V
+\]
+
+where $M$ is a causal mask:
+
+\[
+M_{ij} = \begin{cases}
+0 & \text{if } i \geq j \\
+-\infty & \text{if } i < j
+\end{cases}
+\]
+
+This ensures that token $i$ can only attend to tokens $j \leq i$.
+
+\subsection{Generation Process}
+
+At each step $t$:
+\begin{enumerate}
+    \item Embed current token: $e_t = \text{Embedding}(a_t)$
+    \item Add positional encoding: $e_t' = e_t + PE_t$
+    \item Add latent conditioning: $h_t^0 = e_t' + \text{Project}(z)$
+    \item Pass through decoder layers: $h_t^L = \text{Decoder}(h_t^0, h_{<t})$
+    \item Project to vocabulary: $p(a_{t+1}) = \text{softmax}(W_o h_t^L)$
+    \item Sample next token: $a_{t+1} \sim p(a_{t+1})$
+\end{enumerate}
+
+\section{Reinforcement Learning Framework}
+
+\subsection{Reward Function}
+
+Once a molecule $C_T$ is completely generated, a reward is assigned based on predicted IC50:
+
+\[
+R(S_T) = \exp\left(-\frac{f(C_T, x_c)}{\alpha}\right)
+\]
+
+where:
+\begin{itemize}
+    \item $f(C_T, x_c)$ is the IC50 prediction model trained on GDSC dataset
+    \item $\alpha$ is a temperature parameter controlling reward sharpness
+    \item Lower IC50 (higher efficacy) $\rightarrow$ higher reward
+\end{itemize}
+
+\subsection{IC50 Prediction Model}
+
+The IC50 prediction function $f$ is a regression model trained on GDSC data~\cite{icahn2012gdsc,li2015large}:
+
+\[
+f(C_T, x_c) = \text{Regressor}(\text{Encoder}(C_T), x_c)
+\]
+
+This can be implemented as:
+\begin{itemize}
+    \item Neural network: $f(C_T, x_c) = W_2 \text{ReLU}(W_1 [z_c; x_c] + b_1) + b_2$
+    \item Gradient boosting (XGBoost, LightGBM)
+    \item Random forest regression
+\end{itemize}
+
+\subsection{Objective Function}
+
+The objective is to maximize the expected reward:
+
+\[
+J(\theta) = \mathbb{E}[R(S_T)] = \sum_{T \in \mathcal{M}} p(S_T) R(S_T)
+\]
+
+where $\mathcal{M}$ is the set of all possible molecules.
+
+\subsection{Policy Gradient}
+
+To optimize the objective, we compute the gradient:
+
+\[
+\nabla_\theta J(\theta) = \mathbb{E}\left[R(S_T) \nabla_\theta \log p(S_T)\right]
+\]
+
+Using the log-derivative trick:
+
+\[
+\nabla_\theta \log p(S_T) = \sum_{t=1}^{T} \nabla_\theta \log p(a_t | S_{t-1})
+\]
+
+Therefore:
+
+\[
+\nabla_\theta J(\theta) = \mathbb{E}\left[R(S_T) \sum_{t=1}^{T} \nabla_\theta \log p(a_t | S_{t-1})\right]
+\]
+
+\subsection{REINFORCE Algorithm}
+
+The REINFORCE algorithm~\cite{williams1992simple} estimates the gradient:
+
+\[
+\nabla_\theta J(\theta) \approx \frac{1}{N}\sum_{n=1}^{N} R(S_T^{(n)}) \sum_{t=1}^{T} \nabla_\theta \log p(a_t^{(n)} | S_{t-1}^{(n)})
+\]
+
+where $N$ is the number of sampled trajectories.
+
+\subsection{Baseline Subtraction}
+
+To reduce variance, subtract a baseline $b$:
+
+\[
+\nabla_\theta J(\theta) \approx \frac{1}{N}\sum_{n=1}^{N} (R(S_T^{(n)}) - b) \sum_{t=1}^{T} \nabla_\theta \log p(a_t^{(n)} | S_{t-1}^{(n)})
+\]
+
+Common baselines:
+\begin{itemize}
+    \item Moving average: $b = \frac{1}{N}\sum_{n=1}^{N} R(S_T^{(n)})$
+    \item Value function: $b = V(S_{t-1})$ (learned critic)
+\end{itemize}
+
+\subsection{Alternative RL Approaches}
+
+\subsubsection{Proximal Policy Optimization (PPO)}
+
+PPO~\cite{schulman2017proximal} clips the policy update to prevent large changes:
+
+\[
+L^{CLIP}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t\right)\right]
+\]
+
+where $r_t(\theta) = \frac{p_\theta(a_t|s_t)}{p_{\theta_{old}}(a_t|s_t)}$ is the importance ratio.
+
+\subsubsection{Actor-Critic}
+
+Uses a value function $V(s)$ to estimate the advantage:
+
+\[
+\hat{A}_t = R(S_T) - V(S_{t-1})
+\]
+
+\section{Training Objectives}
+
+\subsection{Pretraining Phase}
+
+\subsubsection{Profile VAE Pretraining}
+
+Train PVAE on TCGA data:
+
+\[
+\mathcal{L}_{PVAE}^{pretrain} = \mathcal{L}_{recon}^p + \beta_p \mathcal{L}_{KL}^p
+\]
+
+where:
+\begin{align}
+\mathcal{L}_{recon}^p &= -\mathbb{E}_{z_p \sim q_{\phi_p}}[\log p_{\theta_p}(x_p | z_p)] \\
+\mathcal{L}_{KL}^p &= \text{KL}(q_{\phi_p}(z_p | x_p) \| \mathcal{N}(0, I))
+\end{align}
+
+\subsubsection{SMILES VAE Pretraining}
+
+Train SVAE on ChEMBL data:
+
+\[
+\mathcal{L}_{SVAE}^{pretrain} = \mathcal{L}_{recon}^c + \beta_c \mathcal{L}_{KL}^c
+\]
+
+where:
+\begin{align}
+\mathcal{L}_{recon}^c &= -\sum_{t=1}^{L}\log p_{\theta_c}(t_t | z_c, t_{<t}) \\
+\mathcal{L}_{KL}^c &= \text{KL}(q_{\phi_c}(z_c | x_c) \| \mathcal{N}(0, I))
+\end{align}
+
+\subsection{Fine-tuning Phase}
+
+Joint training on GDSC dataset with combined loss:
+
+\[
+\mathcal{L}_{joint} = \mathcal{L}_{PVAE} + \mathcal{L}_{SVAE} + \lambda \mathcal{L}_{RL}
+\]
+
+where:
+\begin{align}
+\mathcal{L}_{RL} &= -\mathbb{E}[R(S_T) \log p(S_T)]
+\end{align}
+
+\subsection{KL Divergence Formulas}
+
+For Gaussian distributions $q(z) = \mathcal{N}(\mu, \sigma^2)$ and $p(z) = \mathcal{N}(0, 1)$:
+
+\[
+\text{KL}(q \| p) = \frac{1}{2}\sum_{i=1}^{d}\left[\mu_i^2 + \sigma_i^2 - \log(\sigma_i^2) - 1\right]
+\]
+
+For multivariate case with diagonal covariance:
+
+\[
+\text{KL}(q \| p) = \frac{1}{2}\left[\text{tr}(\Sigma) + \mu^T\mu - d - \log|\Sigma|\right]
+\]
+
+\subsection{Reconstruction Loss}
+
+For discrete sequences (SMILES), reconstruction loss is cross-entropy:
+
+\[
+\mathcal{L}_{recon}^c = -\sum_{t=1}^{L}\sum_{v=1}^{V} y_{t,v} \log p_{\theta}(v | z, t_{<t})
+\]
+
+where $y_{t,v}$ is the one-hot encoding of the true token at position $t$.
+
+\section{Alternative Architectures and Approaches}
+
+\subsection{VAE Variants}
+
+\subsubsection{$\beta$-VAE}
+
+Introduces a hyperparameter $\beta$ to control the trade-off between reconstruction and regularization~\cite{burgess2018beta}:
+
+\[
+\mathcal{L}_{\beta\text{-VAE}} = \mathcal{L}_{recon} + \beta \mathcal{L}_{KL}
+\]
+
+Higher $\beta$ encourages more disentangled representations.
+
+\subsubsection{Wasserstein Autoencoder (WAE)}
+
+Replaces KL divergence with Wasserstein distance~\cite{tolstikhin2018wasserstein}:
+
+\[
+\mathcal{L}_{WAE} = \mathcal{L}_{recon} + \lambda \mathcal{W}(q(z), p(z))
+\]
+
+\subsubsection{Vector Quantized VAE (VQ-VAE)}
+
+Uses discrete latent codes~\cite{van2017neural}:
+
+\[
+z_q = \text{Quantize}(z_e) = \arg\min_{z_k \in \mathcal{Z}} \|z_e - z_k\|
+\]
+
+\subsection{Alternative Attention Mechanisms}
+
+\subsubsection{Sparse Attention}
+
+Limits attention to a subset of positions to reduce computational cost.
+
+\subsubsection{Linear Attention}
+
+Replaces softmax with linear operations:
+
+\[
+\text{LinearAttention}(Q, K, V) = \frac{QK^TV}{\|QK^T\|_1}
+\]
+
+\subsubsection{Performer}
+
+Uses random features to approximate attention with linear complexity.
+
+\subsection{Alternative Pooling Strategies}
+
+\begin{itemize}
+    \item \textbf{Attention Pooling}: Weighted sum using attention scores
+    \item \textbf{Last Token}: Use only the last hidden state
+    \item \textbf{Learnable Pooling}: Trainable weighted combination
+\end{itemize}
+
+\section{Proofs of Concept}
+
+\subsection{POC 1: VAE Enables Smooth Latent Interpolation}
+
+\begin{proofofconcept}[Latent Interpolation]
+The VAE latent space~\cite{kingma2014autoencoding} is continuous and regularized by the KL divergence term. For two molecules with latents $z_1$ and $z_2$, interpolation:
+
+\[
+z(\alpha) = (1-\alpha)z_1 + \alpha z_2, \quad \alpha \in [0,1]
+\]
+
+produces valid molecules because:
+\begin{itemize}
+    \item The prior $p(z) = \mathcal{N}(0, I)$ encourages the latent space to be smooth
+    \item The KL term penalizes deviations from the prior, ensuring continuity
+    \item Interpolated points remain in regions of high probability under the prior
+\end{itemize}
+\end{proofofconcept}
+
+\subsection{POC 2: Information Preservation in Gaussian Addition}
+
+\begin{proofofconcept}[Gaussian Addition Information]
+Given two independent Gaussian distributions $z_p \sim \mathcal{N}(\mu_p, \Sigma_p)$ and $z_c \sim \mathcal{N}(\mu_c, \Sigma_c)$, their sum $z = z_p + z_c$ has:
+
+\[
+z \sim \mathcal{N}(\mu_p + \mu_c, \Sigma_p + \Sigma_c)
+\]
+
+The mutual information is preserved because:
+\begin{itemize}
+    \item The mean captures the first moment (expected value) of both distributions
+    \item The covariance captures the second moment (uncertainty) of both distributions
+    \item The decoder can recover information from both modalities through the combined mean and variance
+\end{itemize}
+\end{proofofconcept}
+
+\subsection{POC 3: Conditioning on Transcriptomics Improves Specificity}
+
+\begin{proofofconcept}[Transcriptomic Conditioning]
+Conditioning molecule generation on transcriptomic profiles $x_c$ improves cancer-specificity because:
+
+\begin{itemize}
+    \item \textbf{Pathway alignment}: Transcriptomic profiles encode pathway activity, guiding generation toward molecules that target active pathways
+    \item \textbf{Disease context}: Different cancer types have distinct transcriptomic signatures, enabling type-specific generation
+    \item \textbf{Reduced off-target effects}: Molecules generated for specific profiles are more likely to interact with disease-relevant targets
+\end{itemize}
+
+Mathematically, conditioning increases the likelihood of generating effective molecules:
+
+\[
+p(\text{effective} | x_c) > p(\text{effective})
+\]
+
+where effectiveness is measured by IC50.
+\end{proofofconcept}
+
+\subsection{POC 4: Convergence of RL Objective}
+
+\begin{proofofconcept}[RL Convergence]
+The REINFORCE algorithm converges under the following conditions:
+
+\begin{enumerate}
+    \item \textbf{Bounded rewards}: $|R(S_T)| \leq R_{\max}$ for all $S_T$
+    \item \textbf{Policy gradient exists}: $\nabla_\theta \log p(S_T)$ is well-defined
+    \item \textbf{Learning rate schedule}: $\sum_t \alpha_t = \infty$ and $\sum_t \alpha_t^2 < \infty$
+    \item \textbf{Baseline reduces variance}: Using a baseline $b$ reduces the variance of gradient estimates
+\end{enumerate}
+
+Under these conditions, the policy gradient method converges to a local optimum of $J(\theta)$.
+\end{proofofconcept}
+
+\subsection{POC 5: Transformer Architecture for Sequential Generation}
+
+\begin{proofofconcept}[Transformer for Molecules]
+The Transformer architecture~\cite{vaswani2017attention} is well-suited for sequential molecule generation because:
+
+\begin{itemize}
+    \item \textbf{Long-range dependencies}: Self-attention captures dependencies between distant atoms in the molecule
+    \item \textbf{Parallel training}: Unlike RNNs, Transformers can process sequences in parallel during training
+    \item \textbf{Positional encoding}: Captures the sequential nature of SMILES strings
+    \item \textbf{Autoregressive generation}: Causal masking enables autoregressive generation while maintaining parallel training benefits
+    \item \textbf{Context awareness}: Multi-head attention allows the model to attend to different aspects of the molecular structure simultaneously
+\end{itemize}
+\end{proofofconcept}
+
+\section{Implementation Details}
+
+\subsection{Hyperparameters}
+
+Based on the current implementation:
+
+\begin{itemize}
+    \item \textbf{Model dimensions}:
+    \begin{itemize}
+        \item $d_{model} = 512$ (embedding dimension)
+        \item $d_{latent} = 512$ (can be reduced to $\sim 32$)
+        \item $n_{layers} = 8$ (encoder/decoder layers)
+        \item $n_{heads} = 8$ (attention heads)
+        \item $d_{ff} = 2048$ (feedforward dimension, $4 \times d_{model}$)
+    \end{itemize}
+    \item \textbf{Training}:
+    \begin{itemize}
+        \item Learning rate: $10^{-4}$
+        \item Optimizer: AdamW with $\beta_1 = 0.9$, $\beta_2 = 0.98$
+        \item Weight decay: $10^{-4}$
+        \item Warmup steps: 4000
+        \item Gradient clipping: 1.0
+    \end{itemize}
+    \item \textbf{Loss weights}:
+    \begin{itemize}
+        \item $\beta_p = 0.001$ (PVAE KL weight)
+        \item $\beta_c = 0.001$ (SVAE KL weight)
+        \item $\lambda = 1.0$ (RL loss weight, tunable)
+    \end{itemize}
+    \item \textbf{Sequence}:
+    \begin{itemize}
+        \item Max length: 122 tokens
+        \item Vocabulary size: 45 tokens
+    \end{itemize}
+\end{itemize}
+
+\subsection{Training Procedure}
+
+\begin{algorithm}
+\caption{Joint Training Procedure}
+\begin{algorithmic}[1]
+\STATE \textbf{Input}: TCGA profiles, ChEMBL molecules, GDSC triplets
+\STATE \textbf{Initialize}: PVAE, SVAE with random weights
+\STATE
+\STATE \textbf{Phase 1: Pretraining}
+\FOR{epoch in pretrain\_epochs}
+    \STATE Train PVAE on TCGA: $\mathcal{L}_{PVAE}$
+    \STATE Train SVAE on ChEMBL: $\mathcal{L}_{SVAE}$
+\ENDFOR
+\STATE
+\STATE \textbf{Phase 2: Fine-tuning}
+\FOR{epoch in finetune\_epochs}
+    \FOR{batch in GDSC}
+        \STATE Sample $(x_p, x_c, \text{IC50})$ from batch
+        \STATE Encode: $z_p = \text{PVAE}(x_p)$, $z_c = \text{SVAE}(x_c)$
+        \STATE Combine: $z = z_p + z_c$
+        \STATE Decode: $C_T = \text{Decoder}(z)$
+        \STATE Compute reward: $R = \exp(-f(C_T, x_c)/\alpha)$
+        \STATE Update: $\mathcal{L}_{joint} = \mathcal{L}_{PVAE} + \mathcal{L}_{SVAE} + \lambda \mathcal{L}_{RL}$
+    \ENDFOR
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Data Preprocessing}
+
+\subsubsection{TCGA Preprocessing}
+
+\begin{itemize}
+    \item Log2 normalization: $x_{norm} = \log_2(x + 1)$
+    \item Gene selection: Filter to top $G$ variable genes
+    \item Standardization: $x_{std} = \frac{x - \mu}{\sigma}$
+\end{itemize}
+
+\subsubsection{SMILES Preprocessing}
+
+\begin{itemize}
+    \item Tokenization: Split SMILES into tokens (atoms, bonds, rings, etc.)
+    \item Padding: Pad sequences to max length
+    \item Special tokens: Add start, end, and padding tokens
+\end{itemize}
+
+\subsubsection{GDSC Preprocessing}
+
+\begin{itemize}
+    \item Match cell lines to TCGA profiles
+    \item Match drugs to ChEMBL SMILES
+    \item Filter: Keep only triplets with valid IC50 values
+    \item Split: Train/validation/test splits
+\end{itemize}
+
+\section{Conclusion}
+
+This document presents the mathematical foundations for genotype-guided de novo molecule generation. The architecture combines:
+
+\begin{itemize}
+    \item Dual VAE system for encoding transcriptomic profiles and molecular structures
+    \item Gaussian addition for integrating multi-modal latent representations
+    \item Transformer-based decoder for autoregressive molecule generation
+    \item Reinforcement learning for optimizing molecular efficacy (IC50)
+\end{itemize}
+
+The mathematical framework provides a solid foundation for implementation and experimentation with alternative approaches.
+
+\section*{References}
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+\nocite{*} % Include all references even if not cited
+
+% Key references include:
+% \begin{itemize}
+%     \item Kingma \& Welling (2014): Variational Autoencoders
+%     \item Vaswani et al. (2017): Attention Is All You Need
+%     \item Yoshikai et al.: Transformer VAE for Molecules
+%     \item GDSC Dataset: Genomics of Drug Sensitivity in Cancer
+%     \item TCGA Dataset: The Cancer Genome Atlas
+%     \item \textit{[Additional references to be added by user]}
+% \end{itemize}
+
+\end{document}
+
