@@ -15,9 +15,9 @@ class MultiOmicsDataset(Dataset):
     def __getitem__(self, idx):
         return self.dna[idx], self.gene[idx]
     
-
     
-def return_dataloaders(X_dna_meth, X_gene_exp, split_fractions : tuple = (0.5, 0.3)):
+    
+def return_dataloaders(X_dna_meth, X_gene_exp, split_fractions : tuple = (0.8, 0.1)):
 
     """ split_fractions (tuple) : fractional sizes of training and validation set """
 
