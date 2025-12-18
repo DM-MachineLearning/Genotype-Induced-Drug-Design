@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from utils import celoss, SelfAttention
+from Genotype_Induced_Drug_Design.PVAE.utils import celoss, SelfAttention
 
 
 class PVAE(nn.Module):
@@ -251,29 +251,22 @@ class PVAE(nn.Module):
         return history
     
     def return_latent_var(self, x_dna_meth, x_gene):
+
         self.eval()
+        device = next(self.parameters()).device
+
+        x_dna_meth = x_dna_meth.to(device).float()
+        x_gene = x_gene.to(device).float()
+
         with torch.no_grad():
             mu, logvar = self.encoder(x_dna_meth, x_gene)
             z = self.reparameterize(mu, logvar)
+
         return z
     
-    def save_model(self, path, optimizer=None, epoch=None, loss=None):
+    def save_model(self, model, path):
 
-        save_dict = {
-        "model_state_dict": self.state_dict()
-        }
-
-        if optimizer is not None:
-            save_dict["optimizer_state_dict"] = optimizer.state_dict()
-
-        if epoch is not None:
-            save_dict["epoch"] = epoch
-
-        if loss is not None:
-         save_dict["loss"] = loss
-
-        torch.save(save_dict, path)
-        print(f"Model saved to: {path}")
+        torch.save(model.to("cpu").state_dict(), path)
 
 
     def load_model(self, path, optimizer=None, map_location=None):
