@@ -8,9 +8,12 @@ Workflow:
 """
 
 import argparse
+import json
 import os
-from typing import Dict, Tuple
+from typing import Dict, List, Tuple
 
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
@@ -83,6 +86,174 @@ def save_checkpoint(path: str, encoder: nn.Module, meta: Dict, step: int, val_lo
     print(f"[INFO] Saved checkpoint to {path} (step={step}, val_loss={val_loss:.4f})")
 
 
+def plot_losses(train_losses: List[float], val_losses: List[float], output_path: str) -> None:
+    """Plot training and validation losses."""
+    plt.figure(figsize=(10, 6))
+    epochs = range(1, len(train_losses) + 1)
+    plt.plot(epochs, train_losses, 'b-', label='Training Loss', linewidth=2)
+    plt.plot(epochs, val_losses, 'r-', label='Validation Loss', linewidth=2)
+    plt.xlabel('Epoch', fontsize=12)
+    plt.ylabel('Loss', fontsize=12)
+    plt.title('Training and Validation Loss', fontsize=14, fontweight='bold')
+    plt.legend(fontsize=11)
+    plt.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"[INFO] Saved loss plot to {output_path}")
+    plt.close()
+
+
+def compute_metrics(encoder: nn.Module, head: nn.Module, dataloader: DataLoader, 
+                   device: torch.device, meta: Dict, num_samples: int = 1000) -> Dict:
+    """Compute comprehensive evaluation metrics for encoder capacity."""
+    encoder.eval()
+    head.eval()
+    
+    pad_id = meta["pad_id"]
+    vocab = meta["vocab"]
+    
+    total_loss = 0.0
+    total_tokens = 0
+    correct_tokens = 0
+    correct_sequences = 0
+    total_sequences = 0
+    
+    mu_list = []
+    var_list = []
+    
+    ce_loss = nn.CrossEntropyLoss(ignore_index=pad_id, reduction='sum')
+    
+    with torch.no_grad():
+        for batch_idx, batch in enumerate(dataloader):
+            if batch_idx * dataloader.batch_size >= num_samples:
+                break
+                
+            tokens = batch[0].to(device)
+            batch_size = tokens.shape[0]
+            
+            mu, var = encoder(tokens)
+            logits = head(mu)
+            
+            # Loss and perplexity
+            loss = ce_loss(logits.reshape(-1, logits.size(-1)), tokens.reshape(-1))
+            total_loss += loss.item()
+            
+            # Count non-padding tokens
+            mask = (tokens != pad_id)
+            total_tokens += mask.sum().item()
+            
+            # Token-level accuracy
+            predictions = torch.argmax(logits, dim=-1)
+            correct_tokens += ((predictions == tokens) & mask).sum().item()
+            
+            # Sequence-level accuracy (exact match, ignoring padding)
+            for i in range(batch_size):
+                seq_mask = tokens[i] != pad_id
+                if seq_mask.sum() > 0:
+                    seq_pred = predictions[i][seq_mask]
+                    seq_true = tokens[i][seq_mask]
+                    if torch.equal(seq_pred, seq_true):
+                        correct_sequences += 1
+                    total_sequences += 1
+            
+            # Collect latent statistics
+            mu_list.append(mu.cpu())
+            var_list.append(var.cpu())
+    
+    # Compute metrics
+    avg_loss = total_loss / max(total_tokens, 1)
+    perplexity = np.exp(avg_loss)
+    token_accuracy = correct_tokens / max(total_tokens, 1)
+    sequence_accuracy = correct_sequences / max(total_sequences, 1)
+    
+    # Latent space statistics
+    all_mu = torch.cat(mu_list, dim=0)
+    all_var = torch.cat(var_list, dim=0)
+    
+    mu_mean = all_mu.mean(dim=0).numpy()
+    mu_std = all_mu.std(dim=0).numpy()
+    var_mean = all_var.mean(dim=0).numpy()
+    
+    # Compute latent space diversity (mean pairwise distance)
+    sample_size = min(500, all_mu.shape[0])
+    sample_indices = torch.randperm(all_mu.shape[0])[:sample_size]
+    mu_sample = all_mu[sample_indices]
+    
+    # Pairwise L2 distances
+    mu_expanded1 = mu_sample.unsqueeze(1)  # [sample_size, 1, latent_size]
+    mu_expanded2 = mu_sample.unsqueeze(0)  # [1, sample_size, latent_size]
+    pairwise_distances = torch.norm(mu_expanded1 - mu_expanded2, dim=2)
+    # Exclude diagonal (self-distances)
+    mask = ~torch.eye(sample_size, dtype=torch.bool)
+    mean_pairwise_distance = pairwise_distances[mask].mean().item()
+    
+    metrics = {
+        "loss": avg_loss,
+        "perplexity": perplexity,
+        "token_accuracy": token_accuracy,
+        "sequence_accuracy": sequence_accuracy,
+        "latent_stats": {
+            "mu_mean": float(mu_mean.mean()),
+            "mu_std": float(mu_std.mean()),
+            "mu_std_per_dim": mu_std.tolist(),
+            "var_mean": float(var_mean.mean()),
+            "mean_pairwise_distance": mean_pairwise_distance,
+        },
+        "num_samples_evaluated": total_sequences,
+    }
+    
+    return metrics
+
+
+def print_metrics(metrics: Dict) -> None:
+    """Print evaluation metrics in a formatted way."""
+    print("\n" + "="*70)
+    print("ENCODER CAPACITY EVALUATION METRICS")
+    print("="*70)
+    print(f"\n📊 Reconstruction Performance:")
+    print(f"  • Loss:              {metrics['loss']:.4f}")
+    print(f"  • Perplexity:        {metrics['perplexity']:.2f}")
+    print(f"  • Token Accuracy:    {metrics['token_accuracy']*100:.2f}%")
+    print(f"  • Sequence Accuracy: {metrics['sequence_accuracy']*100:.2f}%")
+    
+    print(f"\n🔬 Latent Space Statistics:")
+    latent = metrics['latent_stats']
+    print(f"  • Mean (mu):         {latent['mu_mean']:.4f}")
+    print(f"  • Std (mu):          {latent['mu_std']:.4f}")
+    print(f"  • Mean Variance:     {latent['var_mean']:.4f}")
+    print(f"  • Pairwise Distance: {latent['mean_pairwise_distance']:.4f}")
+    
+    print(f"\n📈 Samples Evaluated: {metrics['num_samples_evaluated']}")
+    print("="*70 + "\n")
+
+
+def plot_latent_distribution(mu_samples: torch.Tensor, output_path: str, num_dims: int = 8) -> None:
+    """Plot distribution of latent space dimensions."""
+    mu_np = mu_samples.numpy()
+    num_dims = min(num_dims, mu_np.shape[1])
+    
+    fig, axes = plt.subplots(2, 4, figsize=(16, 8))
+    axes = axes.flatten()
+    
+    for i in range(num_dims):
+        ax = axes[i]
+        ax.hist(mu_np[:, i], bins=50, alpha=0.7, edgecolor='black')
+        ax.set_title(f'Latent Dim {i}', fontsize=10)
+        ax.set_xlabel('Value')
+        ax.set_ylabel('Frequency')
+        ax.grid(True, alpha=0.3)
+    
+    # Hide unused subplots
+    for i in range(num_dims, len(axes)):
+        axes[i].axis('off')
+    
+    plt.suptitle('Latent Space Distribution (First 8 Dimensions)', fontsize=14, fontweight='bold')
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"[INFO] Saved latent distribution plot to {output_path}")
+    plt.close()
+
+
 def train(args: argparse.Namespace) -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     train_loader, val_loader, meta = build_dataloaders(args.data_dir, args.batch_size, args.num_workers)
@@ -120,10 +291,17 @@ def train(args: argparse.Namespace) -> None:
 
     global_step = 0
     best_val = float("inf")
+    
+    # Track losses for plotting
+    train_losses = []
+    val_losses = []
 
     for epoch in range(args.epochs):
         encoder.train()
         head.train()
+        epoch_train_loss = 0.0
+        epoch_train_batches = 0
+        
         for batch in train_loader:
             global_step += 1
             tokens = prepare_batch(batch, device)
@@ -140,6 +318,9 @@ def train(args: argparse.Namespace) -> None:
             optimizer.step()
             scheduler.step()
 
+            epoch_train_loss += loss.item()
+            epoch_train_batches += 1
+
             if global_step % args.log_every == 0:
                 print(
                     f"[train] epoch={epoch} step={global_step} "
@@ -148,6 +329,10 @@ def train(args: argparse.Namespace) -> None:
 
             if global_step >= args.max_steps:
                 break
+
+        # Average training loss for epoch
+        avg_train_loss = epoch_train_loss / max(epoch_train_batches, 1)
+        train_losses.append(avg_train_loss)
 
         # Validation
         encoder.eval()
@@ -163,6 +348,7 @@ def train(args: argparse.Namespace) -> None:
                 val_loss += loss.item()
                 val_batches += 1
         val_loss = val_loss / max(1, val_batches)
+        val_losses.append(val_loss)
         print(f"[val] epoch={epoch} val_loss={val_loss:.4f}")
 
         if val_loss < best_val:
@@ -177,6 +363,56 @@ def train(args: argparse.Namespace) -> None:
 
         if global_step >= args.max_steps:
             break
+    
+    # Plot training curves
+    plot_path = os.path.join(args.checkpoint_dir, "training_losses.png")
+    plot_losses(train_losses, val_losses, plot_path)
+    
+    # Final evaluation metrics
+    print("\n[INFO] Computing final evaluation metrics...")
+    metrics = compute_metrics(encoder, head, val_loader, device, meta, num_samples=args.eval_samples)
+    print_metrics(metrics)
+    
+    # Save metrics to JSON
+    metrics_path = os.path.join(args.checkpoint_dir, "evaluation_metrics.json")
+    # Convert numpy arrays to lists for JSON serialization
+    metrics_json = {
+        "loss": metrics["loss"],
+        "perplexity": metrics["perplexity"],
+        "token_accuracy": metrics["token_accuracy"],
+        "sequence_accuracy": metrics["sequence_accuracy"],
+        "latent_stats": {
+            "mu_mean": metrics["latent_stats"]["mu_mean"],
+            "mu_std": metrics["latent_stats"]["mu_std"],
+            "var_mean": metrics["latent_stats"]["var_mean"],
+            "mean_pairwise_distance": metrics["latent_stats"]["mean_pairwise_distance"],
+        },
+        "num_samples_evaluated": metrics["num_samples_evaluated"],
+    }
+    with open(metrics_path, 'w') as f:
+        json.dump(metrics_json, f, indent=2)
+    print(f"[INFO] Saved evaluation metrics to {metrics_path}")
+    
+    # Plot latent space distribution
+    print("\n[INFO] Collecting latent space samples for visualization...")
+    encoder.eval()
+    mu_samples = []
+    with torch.no_grad():
+        sample_count = 0
+        for batch in val_loader:
+            if sample_count >= 1000:
+                break
+            tokens = prepare_batch(batch, device)
+            mu, _ = encoder(tokens)
+            mu_samples.append(mu.cpu())
+            sample_count += mu.shape[0]
+    
+    if mu_samples:
+        all_mu = torch.cat(mu_samples, dim=0)
+        latent_plot_path = os.path.join(args.checkpoint_dir, "latent_distribution.png")
+        plot_latent_distribution(all_mu, latent_plot_path)
+    
+    print(f"\n[INFO] Pretraining complete! Checkpoints and plots saved to {args.checkpoint_dir}")
 
 
 def parse_args() -> argparse.Namespace:
@@ -196,6 +432,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--warmup_steps", type=int, default=4000)
     parser.add_argument("--grad_clip", type=float, default=1.0)
     parser.add_argument("--log_every", type=int, default=50)
+    parser.add_argument("--eval_samples", type=int, default=1000, help="Number of samples to use for final evaluation")
     return parser.parse_args()
 
 
