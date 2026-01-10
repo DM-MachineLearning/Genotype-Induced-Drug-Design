@@ -1,0 +1,15 @@
+{
+  "best_value": 2.674950271844864,
+  "params": {
+    "lr": 0.000946767331608165,
+    "dropout": 0.11050710991031507,
+    "weight_decay": 0.0006860816484011923,
+    "n_layers": 12,
+    "latent_size": 512,
+    "embedding_dim": 1024,
+    "batch_size": 16,
+    "warmup_steps": 1000,
+    "grad_clip": 1.9288735817861549
+  },
+  "number": 21
+}
