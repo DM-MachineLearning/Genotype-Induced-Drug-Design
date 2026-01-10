@@ -1,0 +1,15 @@
+Number of batches:  77033
+[train] epoch=0 step=50 loss=3.4600 lr=1.28e-06
+[train] epoch=0 step=100 loss=2.8774 lr=2.53e-06
+[train] epoch=0 step=150 loss=2.7330 lr=3.77e-06
+[train] epoch=0 step=200 loss=2.5606 lr=5.03e-06
+[train] epoch=0 step=250 loss=2.6507 lr=6.28e-06
+[train] epoch=0 step=300 loss=2.6325 lr=7.52e-06
+[train] epoch=0 step=350 loss=2.4927 lr=8.77e-06
+[train] epoch=0 step=400 loss=2.4901 lr=1.00e-05
+[train] epoch=0 step=450 loss=2.4608 lr=1.13e-05
+[train] epoch=0 step=500 loss=2.4776 lr=1.25e-05
+[train] epoch=0 step=550 loss=2.4230 lr=1.38e-05
+[train] epoch=0 step=600 loss=2.3775 lr=1.50e-05
+[train] epoch=0 step=650 loss=2.4234 lr=1.63e-05
+[train] epoch=0 step=700 loss=2.4369 lr=1.75e-05

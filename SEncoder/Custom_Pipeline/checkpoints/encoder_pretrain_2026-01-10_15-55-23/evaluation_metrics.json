@@ -1,0 +1,13 @@
+{
+  "loss": 2.528376635869912,
+  "perplexity": 12.533143757348986,
+  "token_accuracy": 0.24129131045042745,
+  "sequence_accuracy": 0.0,
+  "latent_stats": {
+    "mu_mean": -0.01905294880270958,
+    "mu_std": 0.5035922527313232,
+    "var_mean": 0.7330498695373535,
+    "mean_pairwise_distance": 16.22372055053711
+  },
+  "num_samples_evaluated": 127
+}

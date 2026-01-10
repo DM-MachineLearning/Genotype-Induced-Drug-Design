@@ -21,6 +21,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from smiles_encoder import SMILESEncoder
 from train_chembl import load_split
 
+from datetime import datetime
 
 class SimpleDecoderHead(nn.Module):
     """
@@ -258,6 +259,8 @@ def train(args: argparse.Namespace) -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     train_loader, val_loader, meta = build_dataloaders(args.data_dir, args.batch_size, args.num_workers)
 
+    print("Number of batches: ", len(train_loader))
+
     encoder = SMILESEncoder(
         vocab_size=len(meta["vocab"]),
         embedding_dim=args.embedding_dim,
@@ -418,7 +421,8 @@ def train(args: argparse.Namespace) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Encoder-only pretraining on ChEMBL tokenized SMILES.")
     parser.add_argument("--data_dir", type=str, default="data/chembl/tokenized", help="Directory with train.pt / val.pt")
-    parser.add_argument("--checkpoint_dir", type=str, default="checkpoints/encoder_pretrain", help="Where to save checkpoints")
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    parser.add_argument("--checkpoint_dir", type=str, default=f"checkpoints/encoder_pretrain_{timestamp}", help="Where to save checkpoints")
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--num_workers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=5)

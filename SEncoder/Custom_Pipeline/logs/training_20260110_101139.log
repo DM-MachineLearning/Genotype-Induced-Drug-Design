@@ -1,0 +1,32 @@
+Number of batches:  36
+[val] epoch=0 val_loss=3.6946
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=36, val_loss=3.6946)
+[INFO] Saved loss plot to checkpoints/encoder_pretrain/training_losses.png
+
+[INFO] Computing final evaluation metrics...
+
+======================================================================
+ENCODER CAPACITY EVALUATION METRICS
+======================================================================
+
+📊 Reconstruction Performance:
+  • Loss:              3.6954
+  • Perplexity:        40.26
+  • Token Accuracy:    6.97%
+  • Sequence Accuracy: 0.00%
+
+🔬 Latent Space Statistics:
+  • Mean (mu):         0.0182
+  • Std (mu):          0.1913
+  • Mean Variance:     0.7477
+  • Pairwise Distance: 6.1128
+
+📈 Samples Evaluated: 127
+======================================================================
+
+[INFO] Saved evaluation metrics to checkpoints/encoder_pretrain/evaluation_metrics.json
+
+[INFO] Collecting latent space samples for visualization...
+[INFO] Saved latent distribution plot to checkpoints/encoder_pretrain/latent_distribution.png
+
+[INFO] Pretraining complete! Checkpoints and plots saved to checkpoints/encoder_pretrain

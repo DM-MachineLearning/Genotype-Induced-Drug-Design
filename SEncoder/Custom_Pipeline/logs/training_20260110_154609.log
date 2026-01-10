@@ -1,0 +1,58 @@
+nohup: ignoring input
+Number of batches:  36
+[val] epoch=0 val_loss=3.6455
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=36, val_loss=3.6455)
+[train] epoch=1 step=50 loss=3.4696 lr=1.28e-06
+[val] epoch=1 val_loss=3.1361
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=72, val_loss=3.1361)
+[train] epoch=2 step=100 loss=2.8782 lr=2.53e-06
+[val] epoch=2 val_loss=2.8328
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=108, val_loss=2.8328)
+[val] epoch=3 val_loss=2.7165
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=144, val_loss=2.7165)
+[train] epoch=4 step=150 loss=2.6951 lr=3.77e-06
+[val] epoch=4 val_loss=2.6618
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=180, val_loss=2.6618)
+[train] epoch=5 step=200 loss=2.6621 lr=5.03e-06
+[val] epoch=5 val_loss=2.6267
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=216, val_loss=2.6267)
+[train] epoch=6 step=250 loss=2.6213 lr=6.28e-06
+[val] epoch=6 val_loss=2.5995
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=252, val_loss=2.5995)
+[val] epoch=7 val_loss=2.5755
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=288, val_loss=2.5755)
+[train] epoch=8 step=300 loss=2.6016 lr=7.52e-06
+[val] epoch=8 val_loss=2.5562
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=324, val_loss=2.5562)
+[train] epoch=9 step=350 loss=2.5391 lr=8.77e-06
+[val] epoch=9 val_loss=2.5373
+[INFO] Saved checkpoint to checkpoints/encoder_pretrain/best_encoder.pt (step=360, val_loss=2.5373)
+[INFO] Saved loss plot to checkpoints/encoder_pretrain/training_losses.png
+
+[INFO] Computing final evaluation metrics...
+
+======================================================================
+ENCODER CAPACITY EVALUATION METRICS
+======================================================================
+
+📊 Reconstruction Performance:
+  • Loss:              2.5393
+  • Perplexity:        12.67
+  • Token Accuracy:    24.28%
+  • Sequence Accuracy: 0.00%
+
+🔬 Latent Space Statistics:
+  • Mean (mu):         0.0045
+  • Std (mu):          0.4919
+  • Mean Variance:     0.7300
+  • Pairwise Distance: 15.8416
+
+📈 Samples Evaluated: 127
+======================================================================
+
+[INFO] Saved evaluation metrics to checkpoints/encoder_pretrain/evaluation_metrics.json
+
+[INFO] Collecting latent space samples for visualization...
+[INFO] Saved latent distribution plot to checkpoints/encoder_pretrain/latent_distribution.png
+
+[INFO] Pretraining complete! Checkpoints and plots saved to checkpoints/encoder_pretrain

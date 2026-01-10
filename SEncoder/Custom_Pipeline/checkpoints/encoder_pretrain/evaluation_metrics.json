@@ -1,13 +1,13 @@
 {
-  "loss": 2.138156321927618,
-  "perplexity": 8.483781838655439,
-  "token_accuracy": 0.302737259139204,
+  "loss": 2.5552413257025965,
+  "perplexity": 12.874406207785462,
+  "token_accuracy": 0.23108332270001275,
   "sequence_accuracy": 0.0,
   "latent_stats": {
-    "mu_mean": 0.018488653004169464,
-    "mu_std": 1.0891246795654297,
-    "var_mean": 0.7394112348556519,
-    "mean_pairwise_distance": 35.025794982910156
+    "mu_mean": 0.00963758397847414,
+    "mu_std": 0.4925641417503357,
+    "var_mean": 0.7349812984466553,
+    "mean_pairwise_distance": 15.847928047180176
   },
-  "num_samples_evaluated": 1024
+  "num_samples_evaluated": 127
 }
