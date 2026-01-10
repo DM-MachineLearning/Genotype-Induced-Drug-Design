@@ -1,0 +1,13 @@
+[I 2026-01-10 16:53:26,837] A new study created in memory with name: pretrain_optuna_tokenized
+
+======================================================================
+Starting hyperparameter optimization
+======================================================================
+Study name: pretrain_optuna_tokenized
+Number of trials: 50
+Search epochs per trial: 2
+Pruning: True
+Data subset factor: 0.2
+======================================================================
+
+  0%|          | 0/50 [00:00<?, ?it/s]
