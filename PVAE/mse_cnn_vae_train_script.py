@@ -1,10 +1,10 @@
-# python -m Genotype_Induced_Drug_Design.PVAE.cnn_vae_train_script
+# python -m Genotype_Induced_Drug_Design.PVAE.mse_cnn_vae_train_script
 
 import numpy as np
 import torch
 from torch import optim
 from torch.optim.lr_scheduler import StepLR
-from Genotype_Induced_Drug_Design.PVAE.CNN_VAE import CNNVAE 
+from Genotype_Induced_Drug_Design.PVAE.MSE_CNN_VAE import MSECNNVAE 
 from Genotype_Induced_Drug_Design.PVAE.dataloader import return_dataloaders_supervised
 import pickle 
 
@@ -19,7 +19,7 @@ def build_model(
     z_dim: int,
     num_classes: int,
 ):
-    model = CNNVAE(
+    model = MSECNNVAE(
         input_dim=input_dim,
         z_dim=z_dim,
         num_classes=num_classes
@@ -34,19 +34,15 @@ def augment_with_gaussian_noise(dna, gene, labels, noise_std=0.05):
     print(f"\n--- Augmentation Started (std={noise_std}) ---")
     print(f"Original shape: {dna.shape}")
     
-    # Create noise tensors
     noise_dna = torch.randn_like(dna) * noise_std
     noise_gene = torch.randn_like(gene) * noise_std
     
-    # Add noise to create augmented samples
     aug_dna = dna + noise_dna
     aug_gene = gene + noise_gene
     
-    # Concatenate original data with augmented data
     final_dna = torch.cat([dna, aug_dna], dim=0)
     final_gene = torch.cat([gene, aug_gene], dim=0)
     
-    # Duplicate labels for the new augmented samples
     final_labels = torch.cat([labels, labels], dim=0)
     
     print(f"Augmented shape: {final_dna.shape}")
@@ -83,8 +79,8 @@ def evaluate(
             logvar=logvar,
             labels=labels,
             preds=class_logits,
-            lamb=lamb,
-            alpha=alpha
+            lamb=lamb,  # updated to use passed lamb
+            alpha=alpha  # updated to use passed alpha
         )
 
         preds_cls = torch.argmax(class_logits, dim=1)
@@ -100,14 +96,11 @@ def evaluate(
     return avg_loss, avg_acc
 
 def main():
-    # --- Configuration ---
     input_dim = 15703  
     
-    # Toggle Data Augmentation Here
     gaussian_aug = True
     aug_noise_std = 0.1
 
-    # --- Data Loading ---
     with open("/home/dmlab/Devendra/data/preprocessed_datasets/methylation_tensor_tcga.pkl", "rb") as f:
         dna_meth = pickle.load(f)
 
@@ -121,16 +114,6 @@ def main():
         print("Labels file not found, creating dummy labels.")
         labels = torch.randint(0, 2, (len(dna_meth),))
 
-    # --- Data Augmentation ---
-    if gaussian_aug:
-        dna_meth, gene_exp, labels = augment_with_gaussian_noise(
-            dna_meth, 
-            gene_exp, 
-            labels, 
-            noise_std=aug_noise_std
-        )
-
-    # --- Label Processing ---
     if labels.dim() > 1 and labels.shape[1] > 1:
         print(f"Detected One-Hot Labels with shape {labels.shape}. Converting to indices...")
         num_classes = labels.shape[1] 
@@ -140,21 +123,36 @@ def main():
 
     print(f"Final detected classes: {num_classes}")
 
-    # Ensure correct types
     dna_meth = dna_meth.to(dtype=torch.float32)
     gene_exp = gene_exp.to(dtype=torch.float32)
     labels = labels.to(dtype=torch.long) 
 
-    # NOTE: If gaussian_aug is True, this split will include augmented data in both
-    # Train and Test sets. Ideally, augmentation should happen *after* splitting 
-    # on the train set only, but this implementation augments the raw tensors.
     train_loader, val_loader, test_loader = return_dataloaders_supervised(
         dna_meth, 
         gene_exp, 
         labels,
         split_fractions=(0.8, 0.1)
     )
-    
+
+    if gaussian_aug:
+        idx = train_loader.dataset.indices  # updated: Subset stores indices
+        x_train_dna = dna_meth[idx]         # updated: select train split data from original tensors
+        x_train_gene = gene_exp[idx]        # updated: select train split data from original tensors
+        y_train = labels[idx]               # updated: select train split labels from original tensors
+
+        x_train_dna, x_train_gene, y_train = augment_with_gaussian_noise(
+            x_train_dna, x_train_gene, y_train, noise_std=aug_noise_std
+        )  # updated: augment only train split
+
+        train_loader = torch.utils.data.DataLoader(
+            torch.utils.data.TensorDataset(x_train_dna, x_train_gene, y_train),
+            batch_size=train_loader.batch_size,
+            shuffle=True,
+            num_workers=getattr(train_loader, "num_workers", 0),
+            drop_last=False
+        )  # updated: rebuild train_loader with augmented train data only
+
+
     print(f"Train batches: {len(train_loader)}")
 
     model = build_model(
@@ -172,29 +170,28 @@ def main():
     history, mu_logvar_history, test_history = model.trainer(
         train_loader=train_loader,
         optimizer=optimizer,
-        num_epochs=300,
+        num_epochs=150,
         device=device,
-        lamb=0.1212279236206466,
-        alpha=13.780485764196705,
+        lamb=BEST_LAMB,
+        alpha=BEST_ALPHA,
         log_interval=1,
         patience=10,
         verbose=True,
         test_loader=test_loader,
         apply_masking=False,
-        mask_ratio=0.20973865433962333,  
-        block_size=300    
+        mask_ratio=BEST_MASK,
+        block_size=BEST_BLOCK
     )
 
-    train_loss, train_acc = evaluate(model, train_loader, device, lamb=1.0)
-    val_loss, val_acc = evaluate(model, val_loader, device, lamb=1.0)
-    test_loss, test_acc = evaluate(model, test_loader, device, lamb=1.0)
+    train_loss, train_acc = evaluate(model, train_loader, device, lamb=BEST_LAMB, alpha=BEST_ALPHA)  # updated: consistent eval weights
+    val_loss, val_acc = evaluate(model, val_loader, device, lamb=BEST_LAMB, alpha=BEST_ALPHA)  # updated: consistent eval weights
+    test_loss, test_acc = evaluate(model, test_loader, device, lamb=BEST_LAMB, alpha=BEST_ALPHA)  # updated: consistent eval weights
 
-    # Save the trained model
-    save_path = "/home/dmlab/Devendra/Genotype_Induced_Drug_Design/PVAE/results_/cnn_vae/cnn_vae_supervised_model_noisy_128_mask_off_mu.pt"
+    save_path = "/home/dmlab/Devendra/Genotype_Induced_Drug_Design/PVAE/results_/cnn_vae/cnn_vae_supervised_model_noisy_128_mask_off_mu_mse.pt"
     model.save_model(model, save_path)
     print(f"Model saved to {save_path}")
 
-    with open("/home/dmlab/Devendra/Genotype_Induced_Drug_Design/PVAE/results_/cnn_vae/cnn_vae_supervised_history_noisy_128_mask_off_mu.pkl", "wb") as f:
+    with open("/home/dmlab/Devendra/Genotype_Induced_Drug_Design/PVAE/results_/cnn_vae/cnn_vae_supervised_history_noisy_128_mask_off_mu_mse.pkl", "wb") as f:
         pickle.dump({
             "train_history": history,
             "mu_logvar_history": mu_logvar_history,

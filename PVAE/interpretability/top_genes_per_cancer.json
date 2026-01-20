@@ -1,0 +1,5211 @@
+{
+  "ACC": {
+    "class_index": 0,
+    "num_samples": 79,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 4555,
+        "gene_name": "FGB",
+        "importance_score": 0.082492
+      },
+      {
+        "rank": 2,
+        "gene_index": 4376,
+        "gene_name": "FAM83E",
+        "importance_score": 0.070094
+      },
+      {
+        "rank": 3,
+        "gene_index": 3506,
+        "gene_name": "DLK1",
+        "importance_score": 0.067528
+      },
+      {
+        "rank": 4,
+        "gene_index": 2478,
+        "gene_name": "CIDEC",
+        "importance_score": 0.067425
+      },
+      {
+        "rank": 5,
+        "gene_index": 9976,
+        "gene_name": "PLA2G2C",
+        "importance_score": 0.066815
+      },
+      {
+        "rank": 6,
+        "gene_index": 12744,
+        "gene_name": "SPATA8",
+        "importance_score": 0.066751
+      },
+      {
+        "rank": 7,
+        "gene_index": 11540,
+        "gene_name": "RTP1",
+        "importance_score": 0.0662
+      },
+      {
+        "rank": 8,
+        "gene_index": 1474,
+        "gene_name": "C16orf90",
+        "importance_score": 0.063846
+      },
+      {
+        "rank": 9,
+        "gene_index": 4708,
+        "gene_name": "FOXD3",
+        "importance_score": 0.063421
+      },
+      {
+        "rank": 10,
+        "gene_index": 11071,
+        "gene_name": "REG1A",
+        "importance_score": 0.061256
+      },
+      {
+        "rank": 11,
+        "gene_index": 3813,
+        "gene_name": "EBNA1BP2",
+        "importance_score": 0.060915
+      },
+      {
+        "rank": 12,
+        "gene_index": 12459,
+        "gene_name": "SLFN14",
+        "importance_score": 0.06028
+      },
+      {
+        "rank": 13,
+        "gene_index": 2354,
+        "gene_name": "CFL1",
+        "importance_score": 0.060264
+      },
+      {
+        "rank": 14,
+        "gene_index": 14208,
+        "gene_name": "TSIX",
+        "importance_score": 0.059066
+      },
+      {
+        "rank": 15,
+        "gene_index": 4571,
+        "gene_name": "FGF19",
+        "importance_score": 0.058369
+      },
+      {
+        "rank": 16,
+        "gene_index": 357,
+        "gene_name": "AGR2",
+        "importance_score": 0.058017
+      },
+      {
+        "rank": 17,
+        "gene_index": 5791,
+        "gene_name": "HORMAD1",
+        "importance_score": 0.057537
+      },
+      {
+        "rank": 18,
+        "gene_index": 10304,
+        "gene_name": "PPP1R14D",
+        "importance_score": 0.057214
+      },
+      {
+        "rank": 19,
+        "gene_index": 4099,
+        "gene_name": "EPX",
+        "importance_score": 0.057184
+      },
+      {
+        "rank": 20,
+        "gene_index": 4554,
+        "gene_name": "FGA",
+        "importance_score": 0.056985
+      },
+      {
+        "rank": 21,
+        "gene_index": 14079,
+        "gene_name": "TRIM10",
+        "importance_score": 0.056922
+      },
+      {
+        "rank": 22,
+        "gene_index": 15220,
+        "gene_name": "ZNF157",
+        "importance_score": 0.056322
+      },
+      {
+        "rank": 23,
+        "gene_index": 8830,
+        "gene_name": "NTNG1",
+        "importance_score": 0.05498
+      },
+      {
+        "rank": 24,
+        "gene_index": 12671,
+        "gene_name": "SOX10",
+        "importance_score": 0.054827
+      },
+      {
+        "rank": 25,
+        "gene_index": 4702,
+        "gene_name": "FOXB1",
+        "importance_score": 0.054254
+      },
+      {
+        "rank": 26,
+        "gene_index": 5902,
+        "gene_name": "HSP90B1",
+        "importance_score": 0.053957
+      },
+      {
+        "rank": 27,
+        "gene_index": 14314,
+        "gene_name": "TTTY12",
+        "importance_score": 0.053611
+      },
+      {
+        "rank": 28,
+        "gene_index": 12094,
+        "gene_name": "SKP1",
+        "importance_score": 0.053346
+      },
+      {
+        "rank": 29,
+        "gene_index": 4730,
+        "gene_name": "FOXN3",
+        "importance_score": 0.053271
+      },
+      {
+        "rank": 30,
+        "gene_index": 4779,
+        "gene_name": "FSHB",
+        "importance_score": 0.053191
+      }
+    ]
+  },
+  "BLCA": {
+    "class_index": 1,
+    "num_samples": 424,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 4248,
+        "gene_name": "FABP12",
+        "importance_score": 0.105725
+      },
+      {
+        "rank": 2,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.102938
+      },
+      {
+        "rank": 3,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.101112
+      },
+      {
+        "rank": 4,
+        "gene_index": 6296,
+        "gene_name": "IRGM",
+        "importance_score": 0.097243
+      },
+      {
+        "rank": 5,
+        "gene_index": 7254,
+        "gene_name": "LRRC10",
+        "importance_score": 0.094538
+      },
+      {
+        "rank": 6,
+        "gene_index": 4675,
+        "gene_name": "FMR1NB",
+        "importance_score": 0.093778
+      },
+      {
+        "rank": 7,
+        "gene_index": 6226,
+        "gene_name": "INSL6",
+        "importance_score": 0.091736
+      },
+      {
+        "rank": 8,
+        "gene_index": 13112,
+        "gene_name": "SVOP",
+        "importance_score": 0.085823
+      },
+      {
+        "rank": 9,
+        "gene_index": 4079,
+        "gene_name": "EPHB4",
+        "importance_score": 0.083191
+      },
+      {
+        "rank": 10,
+        "gene_index": 13849,
+        "gene_name": "TMPRSS11B",
+        "importance_score": 0.083
+      },
+      {
+        "rank": 11,
+        "gene_index": 12738,
+        "gene_name": "SPATA3",
+        "importance_score": 0.081323
+      },
+      {
+        "rank": 12,
+        "gene_index": 12700,
+        "gene_name": "SP8",
+        "importance_score": 0.08132
+      },
+      {
+        "rank": 13,
+        "gene_index": 13074,
+        "gene_name": "SULT1C3",
+        "importance_score": 0.079213
+      },
+      {
+        "rank": 14,
+        "gene_index": 11345,
+        "gene_name": "RNPS1",
+        "importance_score": 0.078426
+      },
+      {
+        "rank": 15,
+        "gene_index": 470,
+        "gene_name": "ALG5",
+        "importance_score": 0.076596
+      },
+      {
+        "rank": 16,
+        "gene_index": 12636,
+        "gene_name": "SNX33",
+        "importance_score": 0.076127
+      },
+      {
+        "rank": 17,
+        "gene_index": 13389,
+        "gene_name": "TDRD1",
+        "importance_score": 0.075766
+      },
+      {
+        "rank": 18,
+        "gene_index": 2716,
+        "gene_name": "COL1A1",
+        "importance_score": 0.075653
+      },
+      {
+        "rank": 19,
+        "gene_index": 6312,
+        "gene_name": "ISL1",
+        "importance_score": 0.075059
+      },
+      {
+        "rank": 20,
+        "gene_index": 4700,
+        "gene_name": "FOXA2",
+        "importance_score": 0.07501
+      },
+      {
+        "rank": 21,
+        "gene_index": 12670,
+        "gene_name": "SOX1",
+        "importance_score": 0.074639
+      },
+      {
+        "rank": 22,
+        "gene_index": 11135,
+        "gene_name": "RGN",
+        "importance_score": 0.074377
+      },
+      {
+        "rank": 23,
+        "gene_index": 6306,
+        "gene_name": "IRX6",
+        "importance_score": 0.073584
+      },
+      {
+        "rank": 24,
+        "gene_index": 12652,
+        "gene_name": "SOD1",
+        "importance_score": 0.072668
+      },
+      {
+        "rank": 25,
+        "gene_index": 13126,
+        "gene_name": "SYF2",
+        "importance_score": 0.071818
+      },
+      {
+        "rank": 26,
+        "gene_index": 14559,
+        "gene_name": "UPK1B",
+        "importance_score": 0.071786
+      },
+      {
+        "rank": 27,
+        "gene_index": 13862,
+        "gene_name": "TMSB10",
+        "importance_score": 0.071738
+      },
+      {
+        "rank": 28,
+        "gene_index": 5044,
+        "gene_name": "GHITM",
+        "importance_score": 0.071414
+      },
+      {
+        "rank": 29,
+        "gene_index": 6308,
+        "gene_name": "ISCU",
+        "importance_score": 0.071306
+      },
+      {
+        "rank": 30,
+        "gene_index": 12192,
+        "gene_name": "SLC22A8",
+        "importance_score": 0.071147
+      }
+    ]
+  },
+  "BRCA": {
+    "class_index": 2,
+    "num_samples": 873,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.091811
+      },
+      {
+        "rank": 2,
+        "gene_index": 10356,
+        "gene_name": "PPY",
+        "importance_score": 0.083824
+      },
+      {
+        "rank": 3,
+        "gene_index": 6312,
+        "gene_name": "ISL1",
+        "importance_score": 0.074059
+      },
+      {
+        "rank": 4,
+        "gene_index": 11943,
+        "gene_name": "SGCA",
+        "importance_score": 0.073392
+      },
+      {
+        "rank": 5,
+        "gene_index": 14178,
+        "gene_name": "TRPS1",
+        "importance_score": 0.066829
+      },
+      {
+        "rank": 6,
+        "gene_index": 1694,
+        "gene_name": "CABP2",
+        "importance_score": 0.063916
+      },
+      {
+        "rank": 7,
+        "gene_index": 2716,
+        "gene_name": "COL1A1",
+        "importance_score": 0.063748
+      },
+      {
+        "rank": 8,
+        "gene_index": 6830,
+        "gene_name": "KRT82",
+        "importance_score": 0.063579
+      },
+      {
+        "rank": 9,
+        "gene_index": 5026,
+        "gene_name": "GFRAL",
+        "importance_score": 0.063271
+      },
+      {
+        "rank": 10,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.063145
+      },
+      {
+        "rank": 11,
+        "gene_index": 11019,
+        "gene_name": "RBMXL3",
+        "importance_score": 0.060641
+      },
+      {
+        "rank": 12,
+        "gene_index": 44,
+        "gene_name": "ABCC1",
+        "importance_score": 0.060377
+      },
+      {
+        "rank": 13,
+        "gene_index": 13357,
+        "gene_name": "TCF21",
+        "importance_score": 0.060367
+      },
+      {
+        "rank": 14,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.058207
+      },
+      {
+        "rank": 15,
+        "gene_index": 10236,
+        "gene_name": "POU3F4",
+        "importance_score": 0.058067
+      },
+      {
+        "rank": 16,
+        "gene_index": 11162,
+        "gene_name": "RGSL1",
+        "importance_score": 0.056239
+      },
+      {
+        "rank": 17,
+        "gene_index": 1807,
+        "gene_name": "CARD17",
+        "importance_score": 0.055288
+      },
+      {
+        "rank": 18,
+        "gene_index": 14858,
+        "gene_name": "WEE2",
+        "importance_score": 0.054716
+      },
+      {
+        "rank": 19,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.054149
+      },
+      {
+        "rank": 20,
+        "gene_index": 9434,
+        "gene_name": "PAGE1",
+        "importance_score": 0.053688
+      },
+      {
+        "rank": 21,
+        "gene_index": 6826,
+        "gene_name": "KRT79",
+        "importance_score": 0.05311
+      },
+      {
+        "rank": 22,
+        "gene_index": 11926,
+        "gene_name": "SFRP1",
+        "importance_score": 0.052479
+      },
+      {
+        "rank": 23,
+        "gene_index": 1627,
+        "gene_name": "C5orf52",
+        "importance_score": 0.051911
+      },
+      {
+        "rank": 24,
+        "gene_index": 4308,
+        "gene_name": "FAM162A",
+        "importance_score": 0.05179
+      },
+      {
+        "rank": 25,
+        "gene_index": 6827,
+        "gene_name": "KRT8",
+        "importance_score": 0.050587
+      },
+      {
+        "rank": 26,
+        "gene_index": 1835,
+        "gene_name": "CASR",
+        "importance_score": 0.050562
+      },
+      {
+        "rank": 27,
+        "gene_index": 12148,
+        "gene_name": "SLC17A1",
+        "importance_score": 0.050304
+      },
+      {
+        "rank": 28,
+        "gene_index": 8604,
+        "gene_name": "NKX6-2",
+        "importance_score": 0.049624
+      },
+      {
+        "rank": 29,
+        "gene_index": 4338,
+        "gene_name": "FAM187B",
+        "importance_score": 0.048604
+      },
+      {
+        "rank": 30,
+        
+        "gene_index": 2190,
+        "gene_name": "CDH1",
+        "importance_score": 0.048268
+      }
+    ]
+  },
+  "CESC": {
+    "class_index": 3,
+    "num_samples": 307,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.268194
+      },
+      {
+        "rank": 2,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.146713
+      },
+      {
+        "rank": 3,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.137434
+      },
+      {
+        "rank": 4,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.123194
+      },
+      {
+        "rank": 5,
+        "gene_index": 13864,
+        "gene_name": "TMSB4Y",
+        "importance_score": 0.119142
+      },
+      {
+        "rank": 6,
+        "gene_index": 11943,
+        "gene_name": "SGCA",
+        "importance_score": 0.10555
+      },
+      {
+        "rank": 7,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.102541
+      },
+      {
+        "rank": 8,
+        "gene_index": 12636,
+        "gene_name": "SNX33",
+        "importance_score": 0.101989
+      },
+      {
+        "rank": 9,
+        "gene_index": 8722,
+        "gene_name": "NPM1",
+        "importance_score": 0.101927
+      },
+      {
+        "rank": 10,
+        "gene_index": 6862,
+        "gene_name": "KRTAP19-3",
+        "importance_score": 0.100545
+      },
+      {
+        "rank": 11,
+        "gene_index": 13356,
+        "gene_name": "TCF20",
+        "importance_score": 0.098035
+      },
+      {
+        "rank": 12,
+        "gene_index": 1684,
+        "gene_name": "CA6",
+        "importance_score": 0.097976
+      },
+      {
+        "rank": 13,
+        "gene_index": 5498,
+        "gene_name": "GUCA2A",
+        "importance_score": 0.094368
+      },
+      {
+        "rank": 14,
+        "gene_index": 8492,
+        "gene_name": "NEU2",
+        "importance_score": 0.09226
+      },
+      {
+        "rank": 15,
+        "gene_index": 1792,
+        "gene_name": "CAPN9",
+        "importance_score": 0.092168
+      },
+      {
+        "rank": 16,
+        "gene_index": 13323,
+        "gene_name": "TBX10",
+        "importance_score": 0.0917
+      },
+      {
+        "rank": 17,
+        "gene_index": 6870,
+        "gene_name": "KRTAP20-2",
+        "importance_score": 0.090041
+      },
+      {
+        "rank": 18,
+        "gene_index": 9946,
+        "gene_name": "PKD1L1",
+        "importance_score": 0.089114
+      },
+      {
+        "rank": 19,
+        "gene_index": 9947,
+        "gene_name": "PKD1L2",
+        "importance_score": 0.088785
+      },
+      {
+        "rank": 20,
+        "gene_index": 10938,
+        "gene_name": "RASGEF1C",
+        "importance_score": 0.086995
+      },
+      {
+        "rank": 21,
+        "gene_index": 4675,
+        "gene_name": "FMR1NB",
+        "importance_score": 0.085853
+      },
+      {
+        "rank": 22,
+        "gene_index": 1454,
+        "gene_name": "C14orf178",
+        "importance_score": 0.085456
+      },
+      {
+        "rank": 23,
+        "gene_index": 6226,
+        "gene_name": "INSL6",
+        "importance_score": 0.08536
+      },
+      {
+        "rank": 24,
+        "gene_index": 283,
+        "gene_name": "ADH1A",
+        "importance_score": 0.085061
+      },
+      {
+        "rank": 25,
+        "gene_index": 10747,
+        "gene_name": "PYDC2",
+        "importance_score": 0.084889
+      },
+      {
+        "rank": 26,
+        "gene_index": 11627,
+        "gene_name": "SAMD7",
+        "importance_score": 0.084843
+      },
+      {
+        "rank": 27,
+        "gene_index": 12652,
+        "gene_name": "SOD1",
+        "importance_score": 0.084521
+      },
+      {
+        "rank": 28,
+        "gene_index": 13291,
+        "gene_name": "TBC1D26",
+        "importance_score": 0.083064
+      },
+      {
+        "rank": 29,
+        "gene_index": 15574,
+        "gene_name": "ZNF735",
+        "importance_score": 0.082698
+      },
+      {
+        "rank": 30,
+        "gene_index": 12389,
+        "gene_name": "SLC5A12",
+        "importance_score": 0.082531
+      }
+    ]
+  },
+  "CHOL": {
+    "class_index": 4,
+    "num_samples": 299,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 4715,
+        "gene_name": "FOXG1",
+        "importance_score": 0.122784
+      },
+      {
+        "rank": 2,
+        "gene_index": 11627,
+        "gene_name": "SAMD7",
+        "importance_score": 0.106809
+      },
+      {
+        "rank": 3,
+        "gene_index": 5803,
+        "gene_name": "HOXB1",
+        "importance_score": 0.101696
+      },
+      {
+        "rank": 4,
+        "gene_index": 13112,
+        "gene_name": "SVOP",
+        "importance_score": 0.096106
+      },
+      {
+        "rank": 5,
+        "gene_index": 1168,
+        "gene_name": "BARX1",
+        "importance_score": 0.095986
+      },
+      {
+        "rank": 6,
+        "gene_index": 4723,
+        "gene_name": "FOXK1",
+        "importance_score": 0.092485
+      },
+      {
+        "rank": 7,
+        "gene_index": 13126,
+        "gene_name": "SYF2",
+        "importance_score": 0.091231
+      },
+      {
+        "rank": 8,
+        "gene_index": 11152,
+        "gene_name": "RGS22",
+        "importance_score": 0.087789
+      },
+      {
+        "rank": 9,
+        "gene_index": 13829,
+        "gene_name": "TMEM89",
+        "importance_score": 0.086304
+      },
+      {
+        "rank": 10,
+        "gene_index": 12082,
+        "gene_name": "SIX3",
+        "importance_score": 0.085146
+      },
+      {
+        "rank": 11,
+        "gene_index": 5082,
+        "gene_name": "GJB7",
+        "importance_score": 0.084365
+      },
+      {
+        "rank": 12,
+        "gene_index": 3650,
+        "gene_name": "DPEP3",
+        "importance_score": 0.083887
+      },
+      {
+        "rank": 13,
+        "gene_index": 5827,
+        "gene_name": "HP",
+        "importance_score": 0.082123
+      },
+      {
+        "rank": 14,
+        "gene_index": 15429,
+        "gene_name": "ZNF526",
+        "importance_score": 0.082084
+      },
+      {
+        "rank": 15,
+        "gene_index": 9939,
+        "gene_name": "PITX3",
+        "importance_score": 0.080989
+      },
+      {
+        "rank": 16,
+        "gene_index": 2291,
+        "gene_name": "CELA1",
+        "importance_score": 0.080215
+      },
+      {
+        "rank": 17,
+        "gene_index": 915,
+        "gene_name": "ASB5",
+        "importance_score": 0.078627
+      },
+      {
+        "rank": 18,
+        "gene_index": 13358,
+        "gene_name": "TCF23",
+        "importance_score": 0.078316
+      },
+      {
+        "rank": 19,
+        "gene_index": 15452,
+        "gene_name": "ZNF558",
+        "importance_score": 0.077785
+      },
+      {
+        "rank": 20,
+        "gene_index": 7368,
+        "gene_name": "LY6G6F",
+        "importance_score": 0.077712
+      },
+      {
+        "rank": 21,
+        "gene_index": 5794,
+        "gene_name": "HOXA10",
+        "importance_score": 0.077231
+      },
+      {
+        "rank": 22,
+        "gene_index": 4935,
+        "gene_name": "GAST",
+        "importance_score": 0.076729
+      },
+      {
+        "rank": 23,
+        "gene_index": 3526,
+        "gene_name": "DMPK",
+        "importance_score": 0.07662
+      },
+      {
+        "rank": 24,
+        "gene_index": 286,
+        "gene_name": "ADH4",
+        "importance_score": 0.076547
+      },
+      {
+        "rank": 25,
+        "gene_index": 3675,
+        "gene_name": "DPY19L3",
+        "importance_score": 0.075619
+      },
+      {
+        "rank": 26,
+        "gene_index": 13371,
+        "gene_name": "TCL1B",
+        "importance_score": 0.075106
+      },
+      {
+        "rank": 27,
+        "gene_index": 9066,
+        "gene_name": "OR1S2",
+        "importance_score": 0.074906
+      },
+      {
+        "rank": 28,
+        "gene_index": 1835,
+        "gene_name": "CASR",
+        "importance_score": 0.074508
+      },
+      {
+        "rank": 29,
+        "gene_index": 6659,
+        "gene_name": "KIR3DL2",
+        "importance_score": 0.074426
+      },
+      {
+        "rank": 30,
+        "gene_index": 4720,
+        "gene_name": "FOXJ1",
+        "importance_score": 0.074052
+      }
+    ]
+  },
+  "COAD": {
+    "class_index": 5,
+    "num_samples": 194,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 13346,
+        "gene_name": "TCEAL5",
+        "importance_score": 0.190165
+      },
+      {
+        "rank": 2,
+        "gene_index": 13347,
+        "gene_name": "TCEAL6",
+        "importance_score": 0.150312
+      },
+      {
+        "rank": 3,
+        "gene_index": 13371,
+        "gene_name": "TCL1B",
+        "importance_score": 0.112476
+      },
+      {
+        "rank": 4,
+        "gene_index": 13358,
+        "gene_name": "TCF23",
+        "importance_score": 0.108885
+      },
+      {
+        "rank": 5,
+        "gene_index": 7464,
+        "gene_name": "MALAT1",
+        "importance_score": 0.097306
+      },
+      {
+        "rank": 6,
+        "gene_index": 8592,
+        "gene_name": "NKTR",
+        "importance_score": 0.087144
+      },
+      {
+        "rank": 7,
+        "gene_index": 5827,
+        "gene_name": "HP",
+        "importance_score": 0.083792
+      },
+      {
+        "rank": 8,
+        "gene_index": 13352,
+        "gene_name": "TCERG1L",
+        "importance_score": 0.082464
+      },
+      {
+        "rank": 9,
+        "gene_index": 15618,
+        "gene_name": "ZNF804B",
+        "importance_score": 0.074606
+      },
+      {
+        "rank": 10,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.072649
+      },
+      {
+        "rank": 11,
+        "gene_index": 11345,
+        "gene_name": "RNPS1",
+        "importance_score": 0.071145
+      },
+      {
+        "rank": 12,
+        "gene_index": 4875,
+        "gene_name": "GABRR3",
+        "importance_score": 0.070738
+      },
+      {
+        "rank": 13,
+        "gene_index": 4024,
+        "gene_name": "ENO1",
+        "importance_score": 0.06978
+      },
+      {
+        "rank": 14,
+        "gene_index": 6979,
+        "gene_name": "LCE1B",
+        "importance_score": 0.06892
+      },
+      {
+        "rank": 15,
+        "gene_index": 13314,
+        "gene_name": "TBL1Y",
+        "importance_score": 0.067847
+      },
+      {
+        "rank": 16,
+        "gene_index": 15574,
+        "gene_name": "ZNF735",
+        "importance_score": 0.067278
+      },
+      {
+        "rank": 17,
+        "gene_index": 5803,
+        "gene_name": "HOXB1",
+        "importance_score": 0.065916
+      },
+      {
+        "rank": 18,
+        "gene_index": 8590,
+        "gene_name": "NKPD1",
+        "importance_score": 0.065551
+      },
+      {
+        "rank": 19,
+        "gene_index": 8744,
+        "gene_name": "NPY6R",
+        "importance_score": 0.065006
+      },
+      {
+        "rank": 20,
+        "gene_index": 8770,
+        "gene_name": "NRAP",
+        "importance_score": 0.06354
+      },
+      {
+        "rank": 21,
+        "gene_index": 6350,
+        "gene_name": "ITGB4",
+        "importance_score": 0.062812
+      },
+      {
+        "rank": 22,
+        "gene_index": 8180,
+        "gene_name": "MYADM",
+        "importance_score": 0.062597
+      },
+      {
+        "rank": 23,
+        "gene_index": 14863,
+        "gene_name": "WFDC12",
+        "importance_score": 0.062483
+      },
+      {
+        "rank": 24,
+        "gene_index": 4715,
+        "gene_name": "FOXG1",
+        "importance_score": 0.062294
+      },
+      {
+        "rank": 25,
+        "gene_index": 2844,
+        "gene_name": "CPNE1",
+        "importance_score": 0.062264
+      },
+      {
+        "rank": 26,
+        "gene_index": 5110,
+        "gene_name": "GLIPR1L1",
+        "importance_score": 0.061867
+      },
+      {
+        "rank": 27,
+        "gene_index": 7368,
+        "gene_name": "LY6G6F",
+        "importance_score": 0.060731
+      },
+      {
+        "rank": 28,
+        "gene_index": 15613,
+        "gene_name": "ZNF793",
+        "importance_score": 0.06059
+      },
+      {
+        "rank": 29,
+        "gene_index": 10402,
+        "gene_name": "PRG1",
+        "importance_score": 0.060375
+      },
+      {
+        "rank": 30,
+        "gene_index": 5828,
+        "gene_name": "HP1BP3",
+        "importance_score": 0.060125
+      }
+    ]
+  },
+  "DLBC": {
+    "class_index": 6,
+    "num_samples": 65,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 3520,
+        "gene_name": "DMBX1",
+        "importance_score": 0.108489
+      },
+      {
+        "rank": 2,
+        "gene_index": 3602,
+        "gene_name": "DNASE1L3",
+        "importance_score": 0.104841
+      },
+      {
+        "rank": 3,
+        "gene_index": 1611,
+        "gene_name": "C4orf45",
+        "importance_score": 0.103143
+      },
+      {
+        "rank": 4,
+        "gene_index": 14322,
+        "gene_name": "TUBA1A",
+        "importance_score": 0.098237
+      },
+      {
+        "rank": 5,
+        "gene_index": 4253,
+        "gene_name": "FABP6",
+        "importance_score": 0.097544
+      },
+      {
+        "rank": 6,
+        "gene_index": 2305,
+        "gene_name": "CENPH",
+        "importance_score": 0.096618
+      },
+      {
+        "rank": 7,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.095858
+      },
+      {
+        "rank": 8,
+        "gene_index": 2716,
+        "gene_name": "COL1A1",
+        "importance_score": 0.094484
+      },
+      {
+        "rank": 9,
+        "gene_index": 2354,
+        "gene_name": "CFL1",
+        "importance_score": 0.091307
+      },
+      {
+        "rank": 10,
+        "gene_index": 7860,
+        "gene_name": "MMP1",
+        "importance_score": 0.091026
+      },
+      {
+        "rank": 11,
+        "gene_index": 3486,
+        "gene_name": "DKK3",
+        "importance_score": 0.090654
+      },
+      {
+        "rank": 12,
+        "gene_index": 4188,
+        "gene_name": "EWSR1",
+        "importance_score": 0.090193
+      },
+      {
+        "rank": 13,
+        "gene_index": 2113,
+        "gene_name": "CD40LG",
+        "importance_score": 0.089294
+      },
+      {
+        "rank": 14,
+        "gene_index": 698,
+        "gene_name": "APOA5",
+        "importance_score": 0.089104
+      },
+      {
+        "rank": 15,
+        "gene_index": 2160,
+        "gene_name": "CDC26",
+        "importance_score": 0.088308
+      },
+      {
+        "rank": 16,
+        "gene_index": 7875,
+        "gene_name": "MMP26",
+        "importance_score": 0.087982
+      },
+      {
+        "rank": 17,
+        "gene_index": 7368,
+        "gene_name": "LY6G6F",
+        "importance_score": 0.087632
+      },
+      {
+        "rank": 18,
+        "gene_index": 1684,
+        "gene_name": "CA6",
+        "importance_score": 0.087195
+      },
+      {
+        "rank": 19,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.086458
+      },
+      {
+        "rank": 20,
+        "gene_index": 1750,
+        "gene_name": "CALML6",
+        "importance_score": 0.08544
+      },
+      {
+        "rank": 21,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.084667
+      },
+      {
+        "rank": 22,
+        "gene_index": 5404,
+        "gene_name": "GRIN3B",
+        "importance_score": 0.080235
+      },
+      {
+        "rank": 23,
+        "gene_index": 13391,
+        "gene_name": "TDRD12",
+        "importance_score": 0.080108
+      },
+      {
+        "rank": 24,
+        "gene_index": 2169,
+        "gene_name": "CDC42BPG",
+        "importance_score": 0.079575
+      },
+      {
+        "rank": 25,
+        "gene_index": 2940,
+        "gene_name": "CRYBB3",
+        "importance_score": 0.078752
+      },
+      {
+        "rank": 26,
+        "gene_index": 5930,
+        "gene_name": "HTN1",
+        "importance_score": 0.077636
+      },
+      {
+        "rank": 27,
+        "gene_index": 2162,
+        "gene_name": "CDC34",
+        "importance_score": 0.076475
+      },
+      {
+        "rank": 28,
+        "gene_index": 4982,
+        "gene_name": "GCSH",
+        "importance_score": 0.075806
+      },
+      {
+        "rank": 29,
+        "gene_index": 11073,
+        "gene_name": "REG3A",
+        "importance_score": 0.074654
+      },
+      {
+        "rank": 30,
+        "gene_index": 11071,
+        "gene_name": "REG1A",
+        "importance_score": 0.074222
+      }
+    ]
+  },
+  "ESCA": {
+    "class_index": 7,
+    "num_samples": 543,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.186125
+      },
+      {
+        "rank": 2,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.184356
+      },
+      {
+        "rank": 3,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.164816
+      },
+      {
+        "rank": 4,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.148722
+      },
+      {
+        "rank": 5,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.139252
+      },
+      {
+        "rank": 6,
+        "gene_index": 7806,
+        "gene_name": "MIF",
+        "importance_score": 0.110588
+      },
+      {
+        "rank": 7,
+        "gene_index": 6226,
+        "gene_name": "INSL6",
+        "importance_score": 0.103961
+      },
+      {
+        "rank": 8,
+        "gene_index": 11943,
+        "gene_name": "SGCA",
+        "importance_score": 0.103011
+      },
+      {
+        "rank": 9,
+        "gene_index": 11019,
+        "gene_name": "RBMXL3",
+        "importance_score": 0.100034
+      },
+      {
+        "rank": 10,
+        "gene_index": 8834,
+        "gene_name": "NTRK3",
+        "importance_score": 0.097804
+      },
+      {
+        "rank": 11,
+        "gene_index": 7070,
+        "gene_name": "LHCGR",
+        "importance_score": 0.097067
+      },
+      {
+        "rank": 12,
+        "gene_index": 10718,
+        "gene_name": "PTTG2",
+        "importance_score": 0.096892
+      },
+      {
+        "rank": 13,
+        "gene_index": 3688,
+        "gene_name": "DRAP1",
+        "importance_score": 0.095439
+      },
+      {
+        "rank": 14,
+        "gene_index": 13357,
+        "gene_name": "TCF21",
+        "importance_score": 0.094963
+      },
+      {
+        "rank": 15,
+        "gene_index": 4356,
+        "gene_name": "FAM47A",
+        "importance_score": 0.094837
+      },
+      {
+        "rank": 16,
+        "gene_index": 13316,
+        "gene_name": "TBL3",
+        "importance_score": 0.094145
+      },
+      {
+        "rank": 17,
+        "gene_index": 4336,
+        "gene_name": "FAM186A",
+        "importance_score": 0.094049
+      },
+      {
+        "rank": 18,
+        "gene_index": 12772,
+        "gene_name": "SPIC",
+        "importance_score": 0.093117
+      },
+      {
+        "rank": 19,
+        "gene_index": 10368,
+        "gene_name": "PRB4",
+        "importance_score": 0.092997
+      },
+      {
+        "rank": 20,
+        "gene_index": 1792,
+        "gene_name": "CAPN9",
+        "importance_score": 0.090694
+      },
+      {
+        "rank": 21,
+        "gene_index": 14700,
+        "gene_name": "VHLL",
+        "importance_score": 0.090267
+      },
+      {
+        "rank": 22,
+        "gene_index": 15524,
+        "gene_name": "ZNF658",
+        "importance_score": 0.090056
+      },
+      {
+        "rank": 23,
+        "gene_index": 4723,
+        "gene_name": "FOXK1",
+        "importance_score": 0.089025
+      },
+      {
+        "rank": 24,
+        "gene_index": 13323,
+        "gene_name": "TBX10",
+        "importance_score": 0.08875
+      },
+      {
+        "rank": 25,
+        "gene_index": 6862,
+        "gene_name": "KRTAP19-3",
+        "importance_score": 0.088661
+      },
+      {
+        "rank": 26,
+        "gene_index": 2354,
+        "gene_name": "CFL1",
+        "importance_score": 0.08763
+      },
+      {
+        "rank": 27,
+        "gene_index": 4772,
+        "gene_name": "FSCB",
+        "importance_score": 0.085273
+      },
+      {
+        "rank": 28,
+        "gene_index": 5922,
+        "gene_name": "HSPBAP1",
+        "importance_score": 0.084537
+      },
+      {
+        "rank": 29,
+        "gene_index": 4715,
+        "gene_name": "FOXG1",
+        "importance_score": 0.084144
+      },
+      {
+        "rank": 30,
+        "gene_index": 2259,
+        "gene_name": "CDR1",
+        "importance_score": 0.083806
+      }
+    ]
+  },
+  "GBM": {
+    "class_index": 8,
+    "num_samples": 66,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 1098,
+        "gene_name": "AWAT1",
+        "importance_score": 0.171231
+      },
+      {
+        "rank": 2,
+        "gene_index": 1107,
+        "gene_name": "B2M",
+        "importance_score": 0.121396
+      },
+      {
+        "rank": 3,
+        "gene_index": 1088,
+        "gene_name": "AURKC",
+        "importance_score": 0.100581
+      },
+      {
+        "rank": 4,
+        "gene_index": 1078,
+        "gene_name": "ATXN3L",
+        "importance_score": 0.096636
+      },
+      {
+        "rank": 5,
+        "gene_index": 4330,
+        "gene_name": "FAM181A",
+        "importance_score": 0.094553
+      },
+      {
+        "rank": 6,
+        "gene_index": 2478,
+        "gene_name": "CIDEC",
+        "importance_score": 0.093725
+      },
+      {
+        "rank": 7,
+        "gene_index": 5791,
+        "gene_name": "HORMAD1",
+        "importance_score": 0.0932
+      },
+      {
+        "rank": 8,
+        "gene_index": 7827,
+        "gene_name": "MKRN3",
+        "importance_score": 0.090489
+      },
+      {
+        "rank": 9,
+        "gene_index": 3531,
+        "gene_name": "DMRTA2",
+        "importance_score": 0.080834
+      },
+      {
+        "rank": 10,
+        "gene_index": 1082,
+        "gene_name": "ATXN7L3",
+        "importance_score": 0.080753
+      },
+      {
+        "rank": 11,
+        "gene_index": 8159,
+        "gene_name": "MUC21",
+        "importance_score": 0.080544
+      },
+      {
+        "rank": 12,
+        "gene_index": 1113,
+        "gene_name": "B3GALT5",
+        "importance_score": 0.080526
+      },
+      {
+        "rank": 13,
+        "gene_index": 2198,
+        "gene_name": "CDH18",
+        "importance_score": 0.078172
+      },
+      {
+        "rank": 14,
+        "gene_index": 3688,
+        "gene_name": "DRAP1",
+        "importance_score": 0.076128
+      },
+      {
+        "rank": 15,
+        "gene_index": 5931,
+        "gene_name": "HTN3",
+        "importance_score": 0.075783
+      },
+      {
+        "rank": 16,
+        "gene_index": 14559,
+        "gene_name": "UPK1B",
+        "importance_score": 0.073754
+      },
+      {
+        "rank": 17,
+        "gene_index": 13770,
+        "gene_name": "TMEM225",
+        "importance_score": 0.073166
+      },
+      {
+        "rank": 18,
+        "gene_index": 8749,
+        "gene_name": "NR1D2",
+        "importance_score": 0.073079
+      },
+      {
+        "rank": 19,
+        "gene_index": 10758,
+        "gene_name": "PZP",
+        "importance_score": 0.07295
+      },
+      {
+        "rank": 20,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.072586
+      },
+      {
+        "rank": 21,
+        "gene_index": 11173,
+        "gene_name": "RHCG",
+        "importance_score": 0.071964
+      },
+      {
+        "rank": 22,
+        "gene_index": 8904,
+        "gene_name": "NXF3",
+        "importance_score": 0.071822
+      },
+      {
+        "rank": 23,
+        "gene_index": 13840,
+        "gene_name": "TMIGD1",
+        "importance_score": 0.070581
+      },
+      {
+        "rank": 24,
+        "gene_index": 7184,
+        "gene_name": "LOC643406",
+        "importance_score": 0.069998
+      },
+      {
+        "rank": 25,
+        "gene_index": 11635,
+        "gene_name": "SAP18",
+        "importance_score": 0.069996
+      },
+      {
+        "rank": 26,
+        "gene_index": 11296,
+        "gene_name": "RNF17",
+        "importance_score": 0.06997
+      },
+      {
+        "rank": 27,
+        "gene_index": 1094,
+        "gene_name": "AVPI1",
+        "importance_score": 0.068869
+      },
+      {
+        "rank": 28,
+        "gene_index": 1052,
+        "gene_name": "ATP6V1G1",
+        "importance_score": 0.068812
+      },
+      {
+        "rank": 29,
+        "gene_index": 10748,
+        "gene_name": "PYGB",
+        "importance_score": 0.068514
+      },
+      {
+        "rank": 30,
+        "gene_index": 14547,
+        "gene_name": "UNC93A",
+        "importance_score": 0.068242
+      }
+    ]
+  },
+  "HNSC": {
+    "class_index": 9,
+    "num_samples": 343,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 1474,
+        "gene_name": "C16orf90",
+        "importance_score": 0.089279
+      },
+      {
+        "rank": 2,
+        "gene_index": 4189,
+        "gene_name": "EXD1",
+        "importance_score": 0.073536
+      },
+      {
+        "rank": 3,
+        "gene_index": 11050,
+        "gene_name": "RCVRN",
+        "importance_score": 0.065725
+      },
+      {
+        "rank": 4,
+        "gene_index": 4789,
+        "gene_name": "FTHL17",
+        "importance_score": 0.059215
+      },
+      {
+        "rank": 5,
+        "gene_index": 7368,
+        "gene_name": "LY6G6F",
+        "importance_score": 0.058318
+      },
+      {
+        "rank": 6,
+        "gene_index": 8420,
+        "gene_name": "NDUFA4L2",
+        "importance_score": 0.055753
+      },
+      {
+        "rank": 7,
+        "gene_index": 5803,
+        "gene_name": "HOXB1",
+        "importance_score": 0.055364
+      },
+      {
+        "rank": 8,
+        "gene_index": 14105,
+        "gene_name": "TRIM40",
+        "importance_score": 0.054665
+      },
+      {
+        "rank": 9,
+        "gene_index": 11056,
+        "gene_name": "RDH16",
+        "importance_score": 0.054414
+      },
+      {
+        "rank": 10,
+        "gene_index": 1424,
+        "gene_name": "C11orf16",
+        "importance_score": 0.05385
+      },
+      {
+        "rank": 11,
+        "gene_index": 6320,
+        "gene_name": "ISX",
+        "importance_score": 0.05319
+      },
+      {
+        "rank": 12,
+        "gene_index": 14782,
+        "gene_name": "VWF",
+        "importance_score": 0.05306
+      },
+      {
+        "rank": 13,
+        "gene_index": 11933,
+        "gene_name": "SFTA2",
+        "importance_score": 0.053037
+      },
+      {
+        "rank": 14,
+        "gene_index": 14715,
+        "gene_name": "VN1R2",
+        "importance_score": 0.052554
+      },
+      {
+        "rank": 15,
+        "gene_index": 4376,
+        "gene_name": "FAM83E",
+        "importance_score": 0.052448
+      },
+      {
+        "rank": 16,
+        "gene_index": 9942,
+        "gene_name": "PIWIL3",
+        "importance_score": 0.052402
+      },
+      {
+        "rank": 17,
+        "gene_index": 12375,
+        "gene_name": "SLC4A1",
+        "importance_score": 0.051877
+      },
+      {
+        "rank": 18,
+        "gene_index": 13848,
+        "gene_name": "TMPRSS11A",
+        "importance_score": 0.051728
+      },
+      {
+        "rank": 19,
+        "gene_index": 2934,
+        "gene_name": "CRYAB",
+        "importance_score": 0.051683
+      },
+      {
+        "rank": 20,
+        "gene_index": 15529,
+        "gene_name": "ZNF667",
+        "importance_score": 0.051028
+      },
+      {
+        "rank": 21,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.050977
+      },
+      {
+        "rank": 22,
+        "gene_index": 6443,
+        "gene_name": "KCNA10",
+        "importance_score": 0.050886
+      },
+      {
+        "rank": 23,
+        "gene_index": 11019,
+        "gene_name": "RBMXL3",
+        "importance_score": 0.050824
+      },
+      {
+        "rank": 24,
+        "gene_index": 4330,
+        "gene_name": "FAM181A",
+        "importance_score": 0.05027
+      },
+      {
+        "rank": 25,
+        "gene_index": 4308,
+        "gene_name": "FAM162A",
+        "importance_score": 0.050062
+      },
+      {
+        "rank": 26,
+        "gene_index": 1720,
+        "gene_name": "CACNG3",
+        "importance_score": 0.04981
+      },
+      {
+        "rank": 27,
+        "gene_index": 4783,
+        "gene_name": "FSTL1",
+        "importance_score": 0.049786
+      },
+      {
+        "rank": 28,
+        "gene_index": 11296,
+        "gene_name": "RNF17",
+        "importance_score": 0.049784
+      },
+      {
+        "rank": 29,
+        "gene_index": 12043,
+        "gene_name": "SIGLEC12",
+        "importance_score": 0.049673
+      },
+      {
+        "rank": 30,
+        "gene_index": 7626,
+        "gene_name": "MCFD2",
+        "importance_score": 0.049634
+      }
+    ]
+  },
+  "KICH": {
+    "class_index": 10,
+    "num_samples": 298,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 8214,
+        "gene_name": "MYH9",
+        "importance_score": 0.138748
+      },
+      {
+        "rank": 2,
+        "gene_index": 6362,
+        "gene_name": "ITLN2",
+        "importance_score": 0.116729
+      },
+      {
+        "rank": 3,
+        "gene_index": 14063,
+        "gene_name": "TRDN",
+        "importance_score": 0.097802
+      },
+      {
+        "rank": 4,
+        "gene_index": 12130,
+        "gene_name": "SLC14A2",
+        "importance_score": 0.095697
+      },
+      {
+        "rank": 5,
+        "gene_index": 581,
+        "gene_name": "ANKRD30A",
+        "importance_score": 0.09223
+      },
+      {
+        "rank": 6,
+        "gene_index": 2543,
+        "gene_name": "CLDND2",
+        "importance_score": 0.088041
+      },
+      {
+        "rank": 7,
+        "gene_index": 10098,
+        "gene_name": "PMCHL1",
+        "importance_score": 0.083015
+      },
+      {
+        "rank": 8,
+        "gene_index": 12278,
+        "gene_name": "SLC2A7",
+        "importance_score": 0.081083
+      },
+      {
+        "rank": 9,
+        "gene_index": 12282,
+        "gene_name": "SLC30A10",
+        "importance_score": 0.080367
+      },
+      {
+        "rank": 10,
+        "gene_index": 444,
+        "gene_name": "ALDH1A1",
+        "importance_score": 0.080212
+      },
+      {
+        "rank": 11,
+        "gene_index": 3042,
+        "gene_name": "CTSC",
+        "importance_score": 0.076866
+      },
+      {
+        "rank": 12,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.074801
+      },
+      {
+        "rank": 13,
+        "gene_index": 2820,
+        "gene_name": "COX8C",
+        "importance_score": 0.074691
+      },
+      {
+        "rank": 14,
+        "gene_index": 7613,
+        "gene_name": "MC2R",
+        "importance_score": 0.074277
+      },
+      {
+        "rank": 15,
+        "gene_index": 545,
+        "gene_name": "ANGPTL5",
+        "importance_score": 0.073019
+      },
+      {
+        "rank": 16,
+        "gene_index": 12310,
+        "gene_name": "SLC35D3",
+        "importance_score": 0.072232
+      },
+      {
+        "rank": 17,
+        "gene_index": 5094,
+        "gene_name": "GKN1",
+        "importance_score": 0.071684
+      },
+      {
+        "rank": 18,
+        "gene_index": 12082,
+        "gene_name": "SIX3",
+        "importance_score": 0.071479
+      },
+      {
+        "rank": 19,
+        "gene_index": 10964,
+        "gene_name": "RAX2",
+        "importance_score": 0.07072
+      },
+      {
+        "rank": 20,
+        "gene_index": 10752,
+        "gene_name": "PYGO2",
+        "importance_score": 0.070473
+      },
+      {
+        "rank": 21,
+        "gene_index": 2291,
+        "gene_name": "CELA1",
+        "importance_score": 0.069895
+      },
+      {
+        "rank": 22,
+        "gene_index": 4376,
+        "gene_name": "FAM83E",
+        "importance_score": 0.069811
+      },
+      {
+        "rank": 23,
+        "gene_index": 14065,
+        "gene_name": "TREM1",
+        "importance_score": 0.069543
+      },
+      {
+        "rank": 24,
+        "gene_index": 11874,
+        "gene_name": "SERPINB7",
+        "importance_score": 0.069461
+      },
+      {
+        "rank": 25,
+        "gene_index": 8200,
+        "gene_name": "MYF6",
+        "importance_score": 0.068791
+      },
+      {
+        "rank": 26,
+        "gene_index": 11603,
+        "gene_name": "SAA3P",
+        "importance_score": 0.067931
+      },
+      {
+        "rank": 27,
+        "gene_index": 12983,
+        "gene_name": "STH",
+        "importance_score": 0.067394
+      },
+      {
+        "rank": 28,
+        "gene_index": 8186,
+        "gene_name": "MYBPC1",
+        "importance_score": 0.067271
+      },
+      {
+        "rank": 29,
+        "gene_index": 14074,
+        "gene_name": "TRIAP1",
+        "importance_score": 0.06572
+      },
+      {
+        "rank": 30,
+        "gene_index": 12816,
+        "gene_name": "SPRR2E",
+        "importance_score": 0.06568
+      }
+    ]
+  },
+  "KIRC": {
+    "class_index": 11,
+    "num_samples": 530,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 10304,
+        "gene_name": "PPP1R14D",
+        "importance_score": 0.094488
+      },
+      {
+        "rank": 2,
+        "gene_index": 5012,
+        "gene_name": "GFAP",
+        "importance_score": 0.088043
+      },
+      {
+        "rank": 3,
+        "gene_index": 5791,
+        "gene_name": "HORMAD1",
+        "importance_score": 0.076595
+      },
+      {
+        "rank": 4,
+        "gene_index": 1190,
+        "gene_name": "BCAN",
+        "importance_score": 0.07564
+      },
+      {
+        "rank": 5,
+        "gene_index": 4820,
+        "gene_name": "FXYD4",
+        "importance_score": 0.074595
+      },
+      {
+        "rank": 6,
+        "gene_index": 2478,
+        "gene_name": "CIDEC",
+        "importance_score": 0.073938
+      },
+      {
+        "rank": 7,
+        "gene_index": 4377,
+        "gene_name": "FAM83F",
+        "importance_score": 0.073698
+      },
+      {
+        "rank": 8,
+        "gene_index": 7132,
+        "gene_name": "LIPJ",
+        "importance_score": 0.073432
+      },
+      {
+        "rank": 9,
+        "gene_index": 8162,
+        "gene_name": "MUC6",
+        "importance_score": 0.073023
+      },
+      {
+        "rank": 10,
+        "gene_index": 5499,
+        "gene_name": "GUCA2B",
+        "importance_score": 0.070518
+      },
+      {
+        "rank": 11,
+        "gene_index": 12818,
+        "gene_name": "SPRR2G",
+        "importance_score": 0.069578
+      },
+      {
+        "rank": 12,
+        "gene_index": 10234,
+        "gene_name": "POU3F2",
+        "importance_score": 0.069451
+      },
+      {
+        "rank": 13,
+        "gene_index": 14547,
+        "gene_name": "UNC93A",
+        "importance_score": 0.068834
+      },
+      {
+        "rank": 14,
+        "gene_index": 13389,
+        "gene_name": "TDRD1",
+        "importance_score": 0.068413
+      },
+      {
+        "rank": 15,
+        "gene_index": 1212,
+        "gene_name": "BCL2L1",
+        "importance_score": 0.067826
+      },
+      {
+        "rank": 16,
+        "gene_index": 1670,
+        "gene_name": "C9orf57",
+        "importance_score": 0.066464
+      },
+      {
+        "rank": 17,
+        "gene_index": 8091,
+        "gene_name": "MT1DP",
+        "importance_score": 0.066237
+      },
+      {
+        "rank": 18,
+        "gene_index": 6532,
+        "gene_name": "KCNU1",
+        "importance_score": 0.064586
+      },
+      {
+        "rank": 19,
+        "gene_index": 6320,
+        "gene_name": "ISX",
+        "importance_score": 0.064579
+      },
+      {
+        "rank": 20,
+        "gene_index": 6501,
+        "gene_name": "KCNK16",
+        "importance_score": 0.063789
+      },
+      {
+        "rank": 21,
+        "gene_index": 14932,
+        "gene_name": "XKR3",
+        "importance_score": 0.063394
+      },
+      {
+        "rank": 22,
+        "gene_index": 4976,
+        "gene_name": "GCM2",
+        "importance_score": 0.063202
+      },
+      {
+        "rank": 23,
+        "gene_index": 8163,
+        "gene_name": "MUC7",
+        "importance_score": 0.062959
+      },
+      {
+        "rank": 24,
+        "gene_index": 8215,
+        "gene_name": "MYL1",
+        "importance_score": 0.06257
+      },
+      {
+        "rank": 25,
+        "gene_index": 7860,
+        "gene_name": "MMP1",
+        "importance_score": 0.062076
+      },
+      {
+        "rank": 26,
+        "gene_index": 6362,
+        "gene_name": "ITLN2",
+        "importance_score": 0.061942
+      },
+      {
+        "rank": 27,
+        "gene_index": 14202,
+        "gene_name": "TSGA13",
+        "importance_score": 0.061842
+      },
+      {
+        "rank": 28,
+        "gene_index": 6262,
+        "gene_name": "IQCF1",
+        "importance_score": 0.061529
+      },
+      {
+        "rank": 29,
+        "gene_index": 4320,
+        "gene_name": "FAM170A",
+        "importance_score": 0.061276
+      },
+      {
+        "rank": 30,
+        "gene_index": 4494,
+        "gene_name": "FBXW5",
+        "importance_score": 0.061034
+      }
+    ]
+  },
+  "KIRP": {
+    "class_index": 12,
+    "num_samples": 414,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 440,
+        "gene_name": "ALB",
+        "importance_score": 0.092021
+      },
+      {
+        "rank": 2,
+        "gene_index": 803,
+        "gene_name": "ARHGEF5",
+        "importance_score": 0.069399
+      },
+      {
+        "rank": 3,
+        "gene_index": 5818,
+        "gene_name": "HOXC8",
+        "importance_score": 0.062645
+      },
+      {
+        "rank": 4,
+        "gene_index": 11862,
+        "gene_name": "SERPINA6",
+        "importance_score": 0.058979
+      },
+      {
+        "rank": 5,
+        "gene_index": 10758,
+        "gene_name": "PZP",
+        "importance_score": 0.056214
+      },
+      {
+        "rank": 6,
+        "gene_index": 3090,
+        "gene_name": "CXCL17",
+        "importance_score": 0.054293
+      },
+      {
+        "rank": 7,
+        "gene_index": 11733,
+        "gene_name": "SCRIB",
+        "importance_score": 0.054043
+      },
+      {
+        "rank": 8,
+        "gene_index": 5514,
+        "gene_name": "GYPB",
+        "importance_score": 0.053049
+      },
+      {
+        "rank": 9,
+        "gene_index": 12924,
+        "gene_name": "ST6GAL1",
+        "importance_score": 0.051273
+      },
+      {
+        "rank": 10,
+        "gene_index": 5627,
+        "gene_name": "HELT",
+        "importance_score": 0.051158
+      },
+      {
+        "rank": 11,
+        "gene_index": 699,
+        "gene_name": "APOB",
+        "importance_score": 0.050858
+      },
+      {
+        "rank": 12,
+        "gene_index": 1562,
+        "gene_name": "C21orf62",
+        "importance_score": 0.050555
+      },
+      {
+        "rank": 13,
+        "gene_index": 11019,
+        "gene_name": "RBMXL3",
+        "importance_score": 0.050247
+      },
+      {
+        "rank": 14,
+        "gene_index": 14625,
+        "gene_name": "USP5",
+        "importance_score": 0.049234
+      },
+      {
+        "rank": 15,
+        "gene_index": 28,
+        "gene_name": "ABCA2",
+        "importance_score": 0.048905
+      },
+      {
+        "rank": 16,
+        "gene_index": 2946,
+        "gene_name": "CRYGN",
+        "importance_score": 0.048334
+      },
+      {
+        "rank": 17,
+        "gene_index": 4555,
+        "gene_name": "FGB",
+        "importance_score": 0.047822
+      },
+      {
+        "rank": 18,
+        "gene_index": 14681,
+        "gene_name": "VCX",
+        "importance_score": 0.047424
+      },
+      {
+        "rank": 19,
+        "gene_index": 6356,
+        "gene_name": "ITIH2",
+        "importance_score": 0.047313
+      },
+      {
+        "rank": 20,
+        "gene_index": 5548,
+        "gene_name": "HARS2",
+        "importance_score": 0.047265
+      },
+      {
+        "rank": 21,
+        "gene_index": 5540,
+        "gene_name": "HAO1",
+        "importance_score": 0.047265
+      },
+      {
+        "rank": 22,
+        "gene_index": 4554,
+        "gene_name": "FGA",
+        "importance_score": 0.047133
+      },
+      {
+        "rank": 23,
+        "gene_index": 14511,
+        "gene_name": "UGT2B4",
+        "importance_score": 0.046945
+      },
+      {
+        "rank": 24,
+        "gene_index": 4708,
+        "gene_name": "FOXD3",
+        "importance_score": 0.046781
+      },
+      {
+        "rank": 25,
+        "gene_index": 338,
+        "gene_name": "AGAP3",
+        "importance_score": 0.046229
+      },
+      {
+        "rank": 26,
+        "gene_index": 11300,
+        "gene_name": "RNF181",
+        "importance_score": 0.046042
+      },
+      {
+        "rank": 27,
+        "gene_index": 7834,
+        "gene_name": "MLF2",
+        "importance_score": 0.044897
+      },
+      {
+        "rank": 28,
+        "gene_index": 7368,
+        "gene_name": "LY6G6F",
+        "importance_score": 0.044733
+      },
+      {
+        "rank": 29,
+        "gene_index": 9978,
+        "gene_name": "PLA2G2E",
+        "importance_score": 0.044684
+      },
+      {
+        "rank": 30,
+        "gene_index": 13033,
+        "gene_name": "STT3A",
+        "importance_score": 0.044277
+      }
+    ]
+  },
+  "LAML": {
+    "class_index": 13,
+    "num_samples": 478,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 11627,
+        "gene_name": "SAMD7",
+        "importance_score": 0.090794
+      },
+      {
+        "rank": 2,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.077839
+      },
+      {
+        "rank": 3,
+        "gene_index": 13849,
+        "gene_name": "TMPRSS11B",
+        "importance_score": 0.077346
+      },
+      {
+        "rank": 4,
+        "gene_index": 6312,
+        "gene_name": "ISL1",
+        "importance_score": 0.075622
+      },
+      {
+        "rank": 5,
+        "gene_index": 10747,
+        "gene_name": "PYDC2",
+        "importance_score": 0.073921
+      },
+      {
+        "rank": 6,
+        "gene_index": 11948,
+        "gene_name": "SGCZ",
+        "importance_score": 0.073652
+      },
+      {
+        "rank": 7,
+        "gene_index": 7362,
+        "gene_name": "LVRN",
+        "importance_score": 0.073612
+      },
+      {
+        "rank": 8,
+        "gene_index": 14681,
+        "gene_name": "VCX",
+        "importance_score": 0.071554
+      },
+      {
+        "rank": 9,
+        "gene_index": 3178,
+        "gene_name": "CYP4Z2P",
+        "importance_score": 0.070864
+      },
+      {
+        "rank": 10,
+        "gene_index": 11866,
+        "gene_name": "SERPINB10",
+        "importance_score": 0.070228
+      },
+      {
+        "rank": 11,
+        "gene_index": 12115,
+        "gene_name": "SLC12A1",
+        "importance_score": 0.070203
+      },
+      {
+        "rank": 12,
+        "gene_index": 8161,
+        "gene_name": "MUC5B",
+        "importance_score": 0.070203
+      },
+      {
+        "rank": 13,
+        "gene_index": 7806,
+        "gene_name": "MIF",
+        "importance_score": 0.069746
+      },
+      {
+        "rank": 14,
+        "gene_index": 6226,
+        "gene_name": "INSL6",
+        "importance_score": 0.06941
+      },
+      {
+        "rank": 15,
+        "gene_index": 11732,
+        "gene_name": "SCRG1",
+        "importance_score": 0.067947
+      },
+      {
+        "rank": 16,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.067472
+      },
+      {
+        "rank": 17,
+        "gene_index": 2444,
+        "gene_name": "CHRNB3",
+        "importance_score": 0.067469
+      },
+      {
+        "rank": 18,
+        "gene_index": 14512,
+        "gene_name": "UGT2B7",
+        "importance_score": 0.066707
+      },
+      {
+        "rank": 19,
+        "gene_index": 12782,
+        "gene_name": "SPINK9",
+        "importance_score": 0.066396
+      },
+      {
+        "rank": 20,
+        "gene_index": 13371,
+        "gene_name": "TCL1B",
+        "importance_score": 0.065837
+      },
+      {
+        "rank": 21,
+        "gene_index": 4320,
+        "gene_name": "FAM170A",
+        "importance_score": 0.065252
+      },
+      {
+        "rank": 22,
+        "gene_index": 11733,
+        "gene_name": "SCRIB",
+        "importance_score": 0.065097
+      },
+      {
+        "rank": 23,
+        "gene_index": 1110,
+        "gene_name": "B3GALT1",
+        "importance_score": 0.064783
+      },
+      {
+        "rank": 24,
+        "gene_index": 5498,
+        "gene_name": "GUCA2A",
+        "importance_score": 0.064422
+      },
+      {
+        "rank": 25,
+        "gene_index": 8332,
+        "gene_name": "NAPSA",
+        "importance_score": 0.063249
+      },
+      {
+        "rank": 26,
+        "gene_index": 12715,
+        "gene_name": "SPAM1",
+        "importance_score": 0.062808
+      },
+      {
+        "rank": 27,
+        "gene_index": 13291,
+        "gene_name": "TBC1D26",
+        "importance_score": 0.061838
+      },
+      {
+        "rank": 28,
+        "gene_index": 11099,
+        "gene_name": "RETNLB",
+        "importance_score": 0.061424
+      },
+      {
+        "rank": 29,
+        "gene_index": 14869,
+        "gene_name": "WFDC9",
+        "importance_score": 0.061354
+      },
+      {
+        "rank": 30,
+        "gene_index": 14107,
+        "gene_name": "TRIM42",
+        "importance_score": 0.060309
+      }
+    ]
+  },
+  "LGG": {
+    "class_index": 14,
+    "num_samples": 380,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.092452
+      },
+      {
+        "rank": 2,
+        "gene_index": 4555,
+        "gene_name": "FGB",
+        "importance_score": 0.084882
+      },
+      {
+        "rank": 3,
+        "gene_index": 3706,
+        "gene_name": "DSCR8",
+        "importance_score": 0.080561
+      },
+      {
+        "rank": 4,
+        "gene_index": 11948,
+        "gene_name": "SGCZ",
+        "importance_score": 0.079188
+      },
+      {
+        "rank": 5,
+        "gene_index": 1627,
+        "gene_name": "C5orf52",
+        "importance_score": 0.074621
+      },
+      {
+        "rank": 6,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.074368
+      },
+      {
+        "rank": 7,
+        "gene_index": 11933,
+        "gene_name": "SFTA2",
+        "importance_score": 0.070746
+      },
+      {
+        "rank": 8,
+        "gene_index": 11696,
+        "gene_name": "SCGB1D4",
+        "importance_score": 0.068206
+      },
+      {
+        "rank": 9,
+        "gene_index": 11611,
+        "gene_name": "SAG",
+        "importance_score": 0.067224
+      },
+      {
+        "rank": 10,
+        "gene_index": 1132,
+        "gene_name": "B4GALT3",
+        "importance_score": 0.067088
+      },
+      {
+        "rank": 11,
+        "gene_index": 12782,
+        "gene_name": "SPINK9",
+        "importance_score": 0.066736
+      },
+      {
+        "rank": 12,
+        "gene_index": 2527,
+        "gene_name": "CLDN17",
+        "importance_score": 0.066435
+      },
+      {
+        "rank": 13,
+        "gene_index": 13112,
+        "gene_name": "SVOP",
+        "importance_score": 0.066372
+      },
+      {
+        "rank": 14,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.066131
+      },
+      {
+        "rank": 15,
+        "gene_index": 15644,
+        "gene_name": "ZNF878",
+        "importance_score": 0.066112
+      },
+      {
+        "rank": 16,
+        "gene_index": 13862,
+        "gene_name": "TMSB10",
+        "importance_score": 0.065677
+      },
+      {
+        "rank": 17,
+        "gene_index": 1694,
+        "gene_name": "CABP2",
+        "importance_score": 0.063587
+      },
+      {
+        "rank": 18,
+        "gene_index": 9564,
+        "gene_name": "PCDHB1",
+        "importance_score": 0.062728
+      },
+      {
+        "rank": 19,
+        "gene_index": 1792,
+        "gene_name": "CAPN9",
+        "importance_score": 0.062136
+      },
+      {
+        "rank": 20,
+        "gene_index": 10718,
+        "gene_name": "PTTG2",
+        "importance_score": 0.061369
+      },
+      {
+        "rank": 21,
+        "gene_index": 9354,
+        "gene_name": "OTOR",
+        "importance_score": 0.060816
+      },
+      {
+        "rank": 22,
+        "gene_index": 8734,
+        "gene_name": "NPTN",
+        "importance_score": 0.060706
+      },
+      {
+        "rank": 23,
+        "gene_index": 6658,
+        "gene_name": "KIR2DS4",
+        "importance_score": 0.060684
+      },
+      {
+        "rank": 24,
+        "gene_index": 5902,
+        "gene_name": "HSP90B1",
+        "importance_score": 0.060613
+      },
+      {
+        "rank": 25,
+        "gene_index": 3860,
+        "gene_name": "EFCAB8",
+        "importance_score": 0.059208
+      },
+      {
+        "rank": 26,
+        "gene_index": 11668,
+        "gene_name": "SCAMP3",
+        "importance_score": 0.058595
+      },
+      {
+        "rank": 27,
+        "gene_index": 3671,
+        "gene_name": "DPT",
+        "importance_score": 0.058267
+      },
+      {
+        "rank": 28,
+        "gene_index": 11939,
+        "gene_name": "SFXN2",
+        "importance_score": 0.057812
+      },
+      {
+        "rank": 29,
+        "gene_index": 12151,
+        "gene_name": "SLC17A4",
+        "importance_score": 0.057703
+      },
+      {
+        "rank": 30,
+        "gene_index": 7362,
+        "gene_name": "LVRN",
+        "importance_score": 0.057622
+      }
+    ]
+  },
+  "LIHC": {
+    "class_index": 15,
+    "num_samples": 87,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 2716,
+        "gene_name": "COL1A1",
+        "importance_score": 0.119046
+      },
+      {
+        "rank": 2,
+        "gene_index": 6356,
+        "gene_name": "ITIH2",
+        "importance_score": 0.087031
+      },
+      {
+        "rank": 3,
+        "gene_index": 2844,
+        "gene_name": "CPNE1",
+        "importance_score": 0.080674
+      },
+      {
+        "rank": 4,
+        "gene_index": 4555,
+        "gene_name": "FGB",
+        "importance_score": 0.079931
+      },
+      {
+        "rank": 5,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.078431
+      },
+      {
+        "rank": 6,
+        "gene_index": 2197,
+        "gene_name": "CDH17",
+        "importance_score": 0.076811
+      },
+      {
+        "rank": 7,
+        "gene_index": 12014,
+        "gene_name": "SHH",
+        "importance_score": 0.076784
+      },
+      {
+        "rank": 8,
+        "gene_index": 2292,
+        "gene_name": "CELA2A",
+        "importance_score": 0.076008
+      },
+      {
+        "rank": 9,
+        "gene_index": 6361,
+        "gene_name": "ITLN1",
+        "importance_score": 0.075656
+      },
+      {
+        "rank": 10,
+        "gene_index": 4097,
+        "gene_name": "EPS8L3",
+        "importance_score": 0.075497
+      },
+      {
+        "rank": 11,
+        "gene_index": 11531,
+        "gene_name": "RTL1",
+        "importance_score": 0.074917
+      },
+      {
+        "rank": 12,
+        "gene_index": 1611,
+        "gene_name": "C4orf45",
+        "importance_score": 0.074635
+      },
+      {
+        "rank": 13,
+        "gene_index": 14858,
+        "gene_name": "WEE2",
+        "importance_score": 0.074381
+      },
+      {
+        "rank": 14,
+        "gene_index": 8626,
+        "gene_name": "NLRP5",
+        "importance_score": 0.074157
+      },
+      {
+        "rank": 15,
+        "gene_index": 2043,
+        "gene_name": "CCR3",
+        "importance_score": 0.073367
+      },
+      {
+        "rank": 16,
+        "gene_index": 12818,
+        "gene_name": "SPRR2G",
+        "importance_score": 0.073007
+      },
+      {
+        "rank": 17,
+        "gene_index": 7856,
+        "gene_name": "MMD2",
+        "importance_score": 0.072855
+      },
+      {
+        "rank": 18,
+        "gene_index": 2150,
+        "gene_name": "CDC123",
+        "importance_score": 0.07113
+      },
+      {
+        "rank": 19,
+        "gene_index": 1947,
+        "gene_name": "CCDC63",
+        "importance_score": 0.070855
+      },
+      {
+        "rank": 20,
+        "gene_index": 11302,
+        "gene_name": "RNF183",
+        "importance_score": 0.070806
+      },
+      {
+        "rank": 21,
+        "gene_index": 13652,
+        "gene_name": "TMED10",
+        "importance_score": 0.069426
+      },
+      {
+        "rank": 22,
+        "gene_index": 7293,
+        "gene_name": "LRRC58",
+        "importance_score": 0.068998
+      },
+      {
+        "rank": 23,
+        "gene_index": 6497,
+        "gene_name": "KCNK10",
+        "importance_score": 0.068469
+      },
+      {
+        "rank": 24,
+        "gene_index": 14867,
+        "gene_name": "WFDC5",
+        "importance_score": 0.068025
+      },
+      {
+        "rank": 25,
+        "gene_index": 8162,
+        "gene_name": "MUC6",
+        "importance_score": 0.067946
+      },
+      {
+        "rank": 26,
+        "gene_index": 4040,
+        "gene_name": "ENTHD1",
+        "importance_score": 0.067908
+      },
+      {
+        "rank": 27,
+        "gene_index": 3090,
+        "gene_name": "CXCL17",
+        "importance_score": 0.067885
+      },
+      {
+        "rank": 28,
+        "gene_index": 12018,
+        "gene_name": "SHISA5",
+        "importance_score": 0.06726
+      },
+      {
+        "rank": 29,
+        "gene_index": 4908,
+        "gene_name": "GALNT9",
+        "importance_score": 0.066725
+      },
+      {
+        "rank": 30,
+        "gene_index": 4229,
+        "gene_name": "F11",
+        "importance_score": 0.066528
+      }
+    ]
+  },
+  "LUAD": {
+    "class_index": 16,
+    "num_samples": 9,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 4012,
+        "gene_name": "EMX2",
+        "importance_score": 0.058088
+      },
+      {
+        "rank": 2,
+        "gene_index": 4555,
+        "gene_name": "FGB",
+        "importance_score": 0.048575
+      },
+      {
+        "rank": 3,
+        "gene_index": 3484,
+        "gene_name": "DKK1",
+        "importance_score": 0.047683
+      },
+      {
+        "rank": 4,
+        "gene_index": 2478,
+        "gene_name": "CIDEC",
+        "importance_score": 0.045241
+      },
+      {
+        "rank": 5,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.041476
+      },
+      {
+        "rank": 6,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.040739
+      },
+      {
+        "rank": 7,
+        "gene_index": 4005,
+        "gene_name": "EML4",
+        "importance_score": 0.040429
+      },
+      {
+        "rank": 8,
+        "gene_index": 2528,
+        "gene_name": "CLDN18",
+        "importance_score": 0.039374
+      },
+      {
+        "rank": 9,
+        "gene_index": 2697,
+        "gene_name": "COG1",
+        "importance_score": 0.038731
+      },
+      {
+        "rank": 10,
+        "gene_index": 8761,
+        "gene_name": "NR2F6",
+        "importance_score": 0.03856
+      },
+      {
+        "rank": 11,
+        "gene_index": 4935,
+        "gene_name": "GAST",
+        "importance_score": 0.038107
+      },
+      {
+        "rank": 12,
+        "gene_index": 8334,
+        "gene_name": "NARF",
+        "importance_score": 0.036507
+      },
+      {
+        "rank": 13,
+        "gene_index": 5522,
+        "gene_name": "GZMH",
+        "importance_score": 0.035997
+      },
+      {
+        "rank": 14,
+        "gene_index": 8759,
+        "gene_name": "NR2E3",
+        "importance_score": 0.035713
+      },
+      {
+        "rank": 15,
+        "gene_index": 12753,
+        "gene_name": "SPCS2",
+        "importance_score": 0.034691
+      },
+      {
+        "rank": 16,
+        "gene_index": 15437,
+        "gene_name": "ZNF540",
+        "importance_score": 0.034329
+      },
+      {
+        "rank": 17,
+        "gene_index": 3512,
+        "gene_name": "DLX1",
+        "importance_score": 0.033554
+      },
+      {
+        "rank": 18,
+        "gene_index": 14616,
+        "gene_name": "USP40",
+        "importance_score": 0.033396
+      },
+      {
+        "rank": 19,
+        "gene_index": 4554,
+        "gene_name": "FGA",
+        "importance_score": 0.032755
+      },
+      {
+        "rank": 20,
+        "gene_index": 6501,
+        "gene_name": "KCNK16",
+        "importance_score": 0.032573
+      },
+      {
+        "rank": 21,
+        "gene_index": 15002,
+        "gene_name": "YWHAZ",
+        "importance_score": 0.032293
+      },
+      {
+        "rank": 22,
+        "gene_index": 5498,
+        "gene_name": "GUCA2A",
+        "importance_score": 0.032155
+      },
+      {
+        "rank": 23,
+        "gene_index": 13713,
+        "gene_name": "TMEM156",
+        "importance_score": 0.032051
+      },
+      {
+        "rank": 24,
+        "gene_index": 10866,
+        "gene_name": "RAD54L2",
+        "importance_score": 0.031835
+      },
+      {
+        "rank": 25,
+        "gene_index": 1304,
+        "gene_name": "BMP5",
+        "importance_score": 0.031766
+      },
+      {
+        "rank": 26,
+        "gene_index": 7051,
+        "gene_name": "LGALS12",
+        "importance_score": 0.031755
+      },
+      {
+        "rank": 27,
+        "gene_index": 14322,
+        "gene_name": "TUBA1A",
+        "importance_score": 0.031586
+      },
+      {
+        "rank": 28,
+        "gene_index": 14868,
+        "gene_name": "WFDC8",
+        "importance_score": 0.031542
+      },
+      {
+        "rank": 29,
+        "gene_index": 7415,
+        "gene_name": "MAD1L1",
+        "importance_score": 0.031122
+      },
+      {
+        "rank": 30,
+        "gene_index": 8745,
+        "gene_name": "NQO1",
+        "importance_score": 0.030732
+      }
+    ]
+  },
+  "LUSC": {
+    "class_index": 17,
+    "num_samples": 183,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.097013
+      },
+      {
+        "rank": 2,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.096053
+      },
+      {
+        "rank": 3,
+        "gene_index": 6226,
+        "gene_name": "INSL6",
+        "importance_score": 0.093071
+      },
+      {
+        "rank": 4,
+        "gene_index": 12738,
+        "gene_name": "SPATA3",
+        "importance_score": 0.083661
+      },
+      {
+        "rank": 5,
+        "gene_index": 1611,
+        "gene_name": "C4orf45",
+        "importance_score": 0.08346
+      },
+      {
+        "rank": 6,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.083195
+      },
+      {
+        "rank": 7,
+        "gene_index": 4516,
+        "gene_name": "FCN2",
+        "importance_score": 0.078451
+      },
+      {
+        "rank": 8,
+        "gene_index": 11711,
+        "gene_name": "SCN1A",
+        "importance_score": 0.078336
+      },
+      {
+        "rank": 9,
+        "gene_index": 2272,
+        "gene_name": "CEACAM16",
+        "importance_score": 0.077563
+      },
+      {
+        "rank": 10,
+        "gene_index": 8621,
+        "gene_name": "NLRP13",
+        "importance_score": 0.077498
+      },
+      {
+        "rank": 11,
+        "gene_index": 11709,
+        "gene_name": "SCN10A",
+        "importance_score": 0.076952
+      },
+      {
+        "rank": 12,
+        "gene_index": 11700,
+        "gene_name": "SCGB3A2",
+        "importance_score": 0.076777
+      },
+      {
+        "rank": 13,
+        "gene_index": 4935,
+        "gene_name": "GAST",
+        "importance_score": 0.071555
+      },
+      {
+        "rank": 14,
+        "gene_index": 4968,
+        "gene_name": "GCG",
+        "importance_score": 0.070665
+      },
+      {
+        "rank": 15,
+        "gene_index": 3768,
+        "gene_name": "DYDC1",
+        "importance_score": 0.067984
+      },
+      {
+        "rank": 16,
+        "gene_index": 13358,
+        "gene_name": "TCF23",
+        "importance_score": 0.0677
+      },
+      {
+        "rank": 17,
+        "gene_index": 5823,
+        "gene_name": "HOXD13",
+        "importance_score": 0.066639
+      },
+      {
+        "rank": 18,
+        "gene_index": 179,
+        "gene_name": "ACTL7A",
+        "importance_score": 0.066348
+      },
+      {
+        "rank": 19,
+        "gene_index": 4568,
+        "gene_name": "FGF16",
+        "importance_score": 0.065896
+      },
+      {
+        "rank": 20,
+        "gene_index": 6498,
+        "gene_name": "KCNK12",
+        "importance_score": 0.064746
+      },
+      {
+        "rank": 21,
+        "gene_index": 15167,
+        "gene_name": "ZIC4",
+        "importance_score": 0.064335
+      },
+      {
+        "rank": 22,
+        "gene_index": 9469,
+        "gene_name": "PAPOLB",
+        "importance_score": 0.062746
+      },
+      {
+        "rank": 23,
+        "gene_index": 9653,
+        "gene_name": "PDE6C",
+        "importance_score": 0.061968
+      },
+      {
+        "rank": 24,
+        "gene_index": 5837,
+        "gene_name": "HPR",
+        "importance_score": 0.060701
+      },
+      {
+        "rank": 25,
+        "gene_index": 8738,
+        "gene_name": "NPVF",
+        "importance_score": 0.060143
+      },
+      {
+        "rank": 26,
+        "gene_index": 12636,
+        "gene_name": "SNX33",
+        "importance_score": 0.059593
+      },
+      {
+        "rank": 27,
+        "gene_index": 5450,
+        "gene_name": "GSTA5",
+        "importance_score": 0.059245
+      },
+      {
+        "rank": 28,
+        "gene_index": 11934,
+        "gene_name": "SFTA3",
+        "importance_score": 0.059066
+      },
+      {
+        "rank": 29,
+        "gene_index": 15574,
+        "gene_name": "ZNF735",
+        "importance_score": 0.058733
+      },
+      {
+        "rank": 30,
+        "gene_index": 2210,
+        "gene_name": "CDH7",
+        "importance_score": 0.058564
+      }
+    ]
+  },
+  "MESO": {
+    "class_index": 18,
+    "num_samples": 187,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 2396,
+        "gene_name": "CHGA",
+        "importance_score": 0.240904
+      },
+      {
+        "rank": 2,
+        "gene_index": 2397,
+        "gene_name": "CHGB",
+        "importance_score": 0.126675
+      },
+      {
+        "rank": 3,
+        "gene_index": 12780,
+        "gene_name": "SPINK7",
+        "importance_score": 0.082261
+      },
+      {
+        "rank": 4,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.076991
+      },
+      {
+        "rank": 5,
+        "gene_index": 5026,
+        "gene_name": "GFRAL",
+        "importance_score": 0.073547
+      },
+      {
+        "rank": 6,
+        "gene_index": 11304,
+        "gene_name": "RNF186",
+        "importance_score": 0.071898
+      },
+      {
+        "rank": 7,
+        "gene_index": 5791,
+        "gene_name": "HORMAD1",
+        "importance_score": 0.071522
+      },
+      {
+        "rank": 8,
+        "gene_index": 504,
+        "gene_name": "AMBN",
+        "importance_score": 0.069344
+      },
+      {
+        "rank": 9,
+        "gene_index": 915,
+        "gene_name": "ASB5",
+        "importance_score": 0.068632
+      },
+      {
+        "rank": 10,
+        "gene_index": 12115,
+        "gene_name": "SLC12A1",
+        "importance_score": 0.067314
+      },
+      {
+        "rank": 11,
+        "gene_index": 11660,
+        "gene_name": "SBK2",
+        "importance_score": 0.067061
+      },
+      {
+        "rank": 12,
+        "gene_index": 5384,
+        "gene_name": "GRHL3",
+        "importance_score": 0.066838
+      },
+      {
+        "rank": 13,
+        "gene_index": 2278,
+        "gene_name": "CEACAM4",
+        "importance_score": 0.065129
+      },
+      {
+        "rank": 14,
+        "gene_index": 12643,
+        "gene_name": "SOAT2",
+        "importance_score": 0.06243
+      },
+      {
+        "rank": 15,
+        "gene_index": 4675,
+        "gene_name": "FMR1NB",
+        "importance_score": 0.062382
+      },
+      {
+        "rank": 16,
+        "gene_index": 3506,
+        "gene_name": "DLK1",
+        "importance_score": 0.061088
+      },
+      {
+        "rank": 17,
+        "gene_index": 12777,
+        "gene_name": "SPINK2",
+        "importance_score": 0.060674
+      },
+      {
+        "rank": 18,
+        "gene_index": 14366,
+        "gene_name": "TXNDC15",
+        "importance_score": 0.060419
+      },
+      {
+        "rank": 19,
+        "gene_index": 3098,
+        "gene_name": "CXCR3",
+        "importance_score": 0.060053
+      },
+      {
+        "rank": 20,
+        "gene_index": 10368,
+        "gene_name": "PRB4",
+        "importance_score": 0.060024
+      },
+      {
+        "rank": 21,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.057396
+      },
+      {
+        "rank": 22,
+        "gene_index": 7875,
+        "gene_name": "MMP26",
+        "importance_score": 0.056999
+      },
+      {
+        "rank": 23,
+        "gene_index": 10240,
+        "gene_name": "POU5F1",
+        "importance_score": 0.056835
+      },
+      {
+        "rank": 24,
+        "gene_index": 7968,
+        "gene_name": "MRGPRX4",
+        "importance_score": 0.056817
+      },
+      {
+        "rank": 25,
+        "gene_index": 7254,
+        "gene_name": "LRRC10",
+        "importance_score": 0.056328
+      },
+      {
+        "rank": 26,
+        "gene_index": 11666,
+        "gene_name": "SCAMP1",
+        "importance_score": 0.056252
+      },
+      {
+        "rank": 27,
+        "gene_index": 3060,
+        "gene_name": "CTXN3",
+        "importance_score": 0.055534
+      },
+      {
+        "rank": 28,
+        "gene_index": 12744,
+        "gene_name": "SPATA8",
+        "importance_score": 0.055403
+      },
+      {
+        "rank": 29,
+        "gene_index": 4422,
+        "gene_name": "FAU",
+        "importance_score": 0.055085
+      },
+      {
+        "rank": 30,
+        "gene_index": 4730,
+        "gene_name": "FOXN3",
+        "importance_score": 0.054967
+      }
+    ]
+  },
+  "OV": {
+    "class_index": 19,
+    "num_samples": 533,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 5090,
+        "gene_name": "GK2",
+        "importance_score": 0.114405
+      },
+      {
+        "rank": 2,
+        "gene_index": 2190,
+        "gene_name": "CDH1",
+        "importance_score": 0.080444
+      },
+      {
+        "rank": 3,
+        "gene_index": 8738,
+        "gene_name": "NPVF",
+        "importance_score": 0.079622
+      },
+      {
+        "rank": 4,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.078982
+      },
+      {
+        "rank": 5,
+        "gene_index": 859,
+        "gene_name": "ARMS2",
+        "importance_score": 0.076487
+      },
+      {
+        "rank": 6,
+        "gene_index": 1298,
+        "gene_name": "BMP10",
+        "importance_score": 0.073498
+      },
+      {
+        "rank": 7,
+        "gene_index": 9947,
+        "gene_name": "PKD1L2",
+        "importance_score": 0.072501
+      },
+      {
+        "rank": 8,
+        "gene_index": 3706,
+        "gene_name": "DSCR8",
+        "importance_score": 0.070155
+      },
+      {
+        "rank": 9,
+        "gene_index": 6752,
+        "gene_name": "KLRC1",
+        "importance_score": 0.068075
+      },
+      {
+        "rank": 10,
+        "gene_index": 2478,
+        "gene_name": "CIDEC",
+        "importance_score": 0.06806
+      },
+      {
+        "rank": 11,
+        "gene_index": 13452,
+        "gene_name": "TFAP2D",
+        "importance_score": 0.066518
+      },
+      {
+        "rank": 12,
+        "gene_index": 4756,
+        "gene_name": "FRMD1",
+        "importance_score": 0.066126
+      },
+      {
+        "rank": 13,
+        "gene_index": 6577,
+        "gene_name": "KEL",
+        "importance_score": 0.064404
+      },
+      {
+        "rank": 14,
+        "gene_index": 1299,
+        "gene_name": "BMP15",
+        "importance_score": 0.064133
+      },
+      {
+        "rank": 15,
+        "gene_index": 10873,
+        "gene_name": "RAET1L",
+        "importance_score": 0.063376
+      },
+      {
+        "rank": 16,
+        "gene_index": 13933,
+        "gene_name": "TNP2",
+        "importance_score": 0.062082
+      },
+      {
+        "rank": 17,
+        "gene_index": 5092,
+        "gene_name": "GK5",
+        "importance_score": 0.061762
+      },
+      {
+        "rank": 18,
+        "gene_index": 5804,
+        "gene_name": "HOXB13",
+        "importance_score": 0.061683
+      },
+      {
+        "rank": 19,
+        "gene_index": 14559,
+        "gene_name": "UPK1B",
+        "importance_score": 0.061521
+      },
+      {
+        "rank": 20,
+        "gene_index": 483,
+        "gene_name": "ALLC",
+        "importance_score": 0.060238
+      },
+      {
+        "rank": 21,
+        "gene_index": 11071,
+        "gene_name": "REG1A",
+        "importance_score": 0.059957
+      },
+      {
+        "rank": 22,
+        "gene_index": 1474,
+        "gene_name": "C16orf90",
+        "importance_score": 0.05982
+      },
+      {
+        "rank": 23,
+        "gene_index": 5682,
+        "gene_name": "HIGD1C",
+        "importance_score": 0.059558
+      },
+      {
+        "rank": 24,
+        "gene_index": 4568,
+        "gene_name": "FGF16",
+        "importance_score": 0.059539
+      },
+      {
+        "rank": 25,
+        "gene_index": 2619,
+        "gene_name": "CMA1",
+        "importance_score": 0.057891
+      },
+      {
+        "rank": 26,
+        "gene_index": 6842,
+        "gene_name": "KRTAP10-2",
+        "importance_score": 0.057509
+      },
+      {
+        "rank": 27,
+        "gene_index": 4779,
+        "gene_name": "FSHB",
+        "importance_score": 0.057298
+      },
+      {
+        "rank": 28,
+        "gene_index": 180,
+        "gene_name": "ACTL7B",
+        "importance_score": 0.057194
+      },
+      {
+        "rank": 29,
+        "gene_index": 10234,
+        "gene_name": "POU3F2",
+        "importance_score": 0.056328
+      },
+      {
+        "rank": 30,
+        "gene_index": 8604,
+        "gene_name": "NKX6-2",
+        "importance_score": 0.05625
+      }
+    ]
+  },
+  "PAAD": {
+    "class_index": 20,
+    "num_samples": 95,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 5818,
+        "gene_name": "HOXC8",
+        "importance_score": 0.131618
+      },
+      {
+        "rank": 2,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.122138
+      },
+      {
+        "rank": 3,
+        "gene_index": 12643,
+        "gene_name": "SOAT2",
+        "importance_score": 0.094804
+      },
+      {
+        "rank": 4,
+        "gene_index": 5806,
+        "gene_name": "HOXB3",
+        "importance_score": 0.085066
+      },
+      {
+        "rank": 5,
+        "gene_index": 7806,
+        "gene_name": "MIF",
+        "importance_score": 0.083509
+      },
+      {
+        "rank": 6,
+        "gene_index": 5819,
+        "gene_name": "HOXC9",
+        "importance_score": 0.082228
+      },
+      {
+        "rank": 7,
+        "gene_index": 3526,
+        "gene_name": "DMPK",
+        "importance_score": 0.08211
+      },
+      {
+        "rank": 8,
+        "gene_index": 1424,
+        "gene_name": "C11orf16",
+        "importance_score": 0.081515
+      },
+      {
+        "rank": 9,
+        "gene_index": 5827,
+        "gene_name": "HP",
+        "importance_score": 0.078987
+      },
+      {
+        "rank": 10,
+        "gene_index": 12782,
+        "gene_name": "SPINK9",
+        "importance_score": 0.078282
+      },
+      {
+        "rank": 11,
+        "gene_index": 5817,
+        "gene_name": "HOXC4",
+        "importance_score": 0.077599
+      },
+      {
+        "rank": 12,
+        "gene_index": 5094,
+        "gene_name": "GKN1",
+        "importance_score": 0.075271
+      },
+      {
+        "rank": 13,
+        "gene_index": 11019,
+        "gene_name": "RBMXL3",
+        "importance_score": 0.074371
+      },
+      {
+        "rank": 14,
+        "gene_index": 35,
+        "gene_name": "ABCA9",
+        "importance_score": 0.07152
+      },
+      {
+        "rank": 15,
+        "gene_index": 1252,
+        "gene_name": "BET1L",
+        "importance_score": 0.071494
+      },
+      {
+        "rank": 16,
+        "gene_index": 4691,
+        "gene_name": "FNTA",
+        "importance_score": 0.070603
+      },
+      {
+        "rank": 17,
+        "gene_index": 5829,
+        "gene_name": "HPCA",
+        "importance_score": 0.070488
+      },
+      {
+        "rank": 18,
+        "gene_index": 5828,
+        "gene_name": "HP1BP3",
+        "importance_score": 0.069524
+      },
+      {
+        "rank": 19,
+        "gene_index": 3836,
+        "gene_name": "EDEM2",
+        "importance_score": 0.069371
+      },
+      {
+        "rank": 20,
+        "gene_index": 5803,
+        "gene_name": "HOXB1",
+        "importance_score": 0.069296
+      },
+      {
+        "rank": 21,
+        "gene_index": 2259,
+        "gene_name": "CDR1",
+        "importance_score": 0.069271
+      },
+      {
+        "rank": 22,
+        "gene_index": 282,
+        "gene_name": "ADD3",
+        "importance_score": 0.069047
+      },
+      {
+        "rank": 23,
+        "gene_index": 15431,
+        "gene_name": "ZNF528",
+        "importance_score": 0.068641
+      },
+      {
+        "rank": 24,
+        "gene_index": 15574,
+        "gene_name": "ZNF735",
+        "importance_score": 0.068092
+      },
+      {
+        "rank": 25,
+        "gene_index": 14012,
+        "gene_name": "TPPP2",
+        "importance_score": 0.067795
+      },
+      {
+        "rank": 26,
+        "gene_index": 822,
+        "gene_name": "ARL13A",
+        "importance_score": 0.067377
+      },
+      {
+        "rank": 27,
+        "gene_index": 15562,
+        "gene_name": "ZNF708",
+        "importance_score": 0.065372
+      },
+      {
+        "rank": 28,
+        "gene_index": 15455,
+        "gene_name": "ZNF561",
+        "importance_score": 0.065367
+      },
+      {
+        "rank": 29,
+        "gene_index": 6306,
+        "gene_name": "IRX6",
+        "importance_score": 0.065345
+      },
+      {
+        "rank": 30,
+        "gene_index": 13126,
+        "gene_name": "SYF2",
+        "importance_score": 0.064939
+      }
+    ]
+  },
+  "PCPG": {
+    "class_index": 21,
+    "num_samples": 263,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 8300,
+        "gene_name": "NACA",
+        "importance_score": 0.110929
+      },
+      {
+        "rank": 2,
+        "gene_index": 12470,
+        "gene_name": "SLITRK6",
+        "importance_score": 0.099635
+      },
+      {
+        "rank": 3,
+        "gene_index": 11075,
+        "gene_name": "REG4",
+        "importance_score": 0.096418
+      },
+      {
+        "rank": 4,
+        "gene_index": 15618,
+        "gene_name": "ZNF804B",
+        "importance_score": 0.093619
+      },
+      {
+        "rank": 5,
+        "gene_index": 2534,
+        "gene_name": "CLDN25",
+        "importance_score": 0.091973
+      },
+      {
+        "rank": 6,
+        "gene_index": 8592,
+        "gene_name": "NKTR",
+        "importance_score": 0.084821
+      },
+      {
+        "rank": 7,
+        "gene_index": 2554,
+        "gene_name": "CLEC2A",
+        "importance_score": 0.082827
+      },
+      {
+        "rank": 8,
+        "gene_index": 11586,
+        "gene_name": "S100A6",
+        "importance_score": 0.082573
+      },
+      {
+        "rank": 9,
+        "gene_index": 5896,
+        "gene_name": "HSF5",
+        "importance_score": 0.082231
+      },
+      {
+        "rank": 10,
+        "gene_index": 14125,
+        "gene_name": "TRIM65",
+        "importance_score": 0.081072
+      },
+      {
+        "rank": 11,
+        "gene_index": 11627,
+        "gene_name": "SAMD7",
+        "importance_score": 0.080882
+      },
+      {
+        "rank": 12,
+        "gene_index": 12680,
+        "gene_name": "SOX21",
+        "importance_score": 0.080847
+      },
+      {
+        "rank": 13,
+        "gene_index": 4982,
+        "gene_name": "GCSH",
+        "importance_score": 0.080023
+      },
+      {
+        "rank": 14,
+        "gene_index": 9697,
+        "gene_name": "PDSS1",
+        "importance_score": 0.077525
+      },
+      {
+        "rank": 15,
+        "gene_index": 427,
+        "gene_name": "AKR1D1",
+        "importance_score": 0.076764
+      },
+      {
+        "rank": 16,
+        "gene_index": 459,
+        "gene_name": "ALDH9A1",
+        "importance_score": 0.076198
+      },
+      {
+        "rank": 17,
+        "gene_index": 5915,
+        "gene_name": "HSPB1",
+        "importance_score": 0.074504
+      },
+      {
+        "rank": 18,
+        "gene_index": 3624,
+        "gene_name": "DOCK1",
+        "importance_score": 0.0745
+      },
+      {
+        "rank": 19,
+        "gene_index": 3706,
+        "gene_name": "DSCR8",
+        "importance_score": 0.074042
+      },
+      {
+        "rank": 20,
+        "gene_index": 824,
+        "gene_name": "ARL14",
+        "importance_score": 0.07394
+      },
+      {
+        "rank": 21,
+        "gene_index": 8305,
+        "gene_name": "NADK",
+        "importance_score": 0.073911
+      },
+      {
+        "rank": 22,
+        "gene_index": 3708,
+        "gene_name": "DSE",
+        "importance_score": 0.073555
+      },
+      {
+        "rank": 23,
+        "gene_index": 12444,
+        "gene_name": "SLCO1A2",
+        "importance_score": 0.072918
+      },
+      {
+        "rank": 24,
+        "gene_index": 8605,
+        "gene_name": "NKX6-3",
+        "importance_score": 0.07281
+      },
+      {
+        "rank": 25,
+        "gene_index": 162,
+        "gene_name": "ACSM1",
+        "importance_score": 0.07265
+      },
+      {
+        "rank": 26,
+        "gene_index": 7772,
+        "gene_name": "MGAT1",
+        "importance_score": 0.071236
+      },
+      {
+        "rank": 27,
+        "gene_index": 14616,
+        "gene_name": "USP40",
+        "importance_score": 0.071001
+      },
+      {
+        "rank": 28,
+        "gene_index": 4254,
+        "gene_name": "FABP7",
+        "importance_score": 0.070775
+      },
+      {
+        "rank": 29,
+        "gene_index": 4014,
+        "gene_name": "EN2",
+        "importance_score": 0.070729
+      },
+      {
+        "rank": 30,
+        "gene_index": 15653,
+        "gene_name": "ZNHIT1",
+        "importance_score": 0.070312
+      }
+    ]
+  },
+  "PRAD": {
+    "class_index": 22,
+    "num_samples": 474,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 7830,
+        "gene_name": "MLANA",
+        "importance_score": 0.103219
+      },
+      {
+        "rank": 2,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.089972
+      },
+      {
+        "rank": 3,
+        "gene_index": 6862,
+        "gene_name": "KRTAP19-3",
+        "importance_score": 0.0843
+      },
+      {
+        "rank": 4,
+        "gene_index": 6843,
+        "gene_name": "KRTAP10-3",
+        "importance_score": 0.082173
+      },
+      {
+        "rank": 5,
+        "gene_index": 11072,
+        "gene_name": "REG1B",
+        "importance_score": 0.080333
+      },
+      {
+        "rank": 6,
+        "gene_index": 12776,
+        "gene_name": "SPINK1",
+        "importance_score": 0.07577
+      },
+      {
+        "rank": 7,
+        "gene_index": 7806,
+        "gene_name": "MIF",
+        "importance_score": 0.075504
+      },
+      {
+        "rank": 8,
+        "gene_index": 14703,
+        "gene_name": "VIM",
+        "importance_score": 0.075334
+      },
+      {
+        "rank": 9,
+        "gene_index": 2738,
+        "gene_name": "COL6A2",
+        "importance_score": 0.074345
+      },
+      {
+        "rank": 10,
+        "gene_index": 3844,
+        "gene_name": "EDNRB",
+        "importance_score": 0.074193
+      },
+      {
+        "rank": 11,
+        "gene_index": 5376,
+        "gene_name": "GRB2",
+        "importance_score": 0.072964
+      },
+      {
+        "rank": 12,
+        "gene_index": 10304,
+        "gene_name": "PPP1R14D",
+        "importance_score": 0.072149
+      },
+      {
+        "rank": 13,
+        "gene_index": 14107,
+        "gene_name": "TRIM42",
+        "importance_score": 0.0715
+      },
+      {
+        "rank": 14,
+        "gene_index": 6844,
+        "gene_name": "KRTAP10-4",
+        "importance_score": 0.071156
+      },
+      {
+        "rank": 15,
+        "gene_index": 6845,
+        "gene_name": "KRTAP10-5",
+        "importance_score": 0.070581
+      },
+      {
+        "rank": 16,
+        "gene_index": 5075,
+        "gene_name": "GJA8",
+        "importance_score": 0.070539
+      },
+      {
+        "rank": 17,
+        "gene_index": 5791,
+        "gene_name": "HORMAD1",
+        "importance_score": 0.069694
+      },
+      {
+        "rank": 18,
+        "gene_index": 4034,
+        "gene_name": "ENPP3",
+        "importance_score": 0.069527
+      },
+      {
+        "rank": 19,
+        "gene_index": 8218,
+        "gene_name": "MYL12B",
+        "importance_score": 0.06828
+      },
+      {
+        "rank": 20,
+        "gene_index": 6528,
+        "gene_name": "KCNS2",
+        "importance_score": 0.067394
+      },
+      {
+        "rank": 21,
+        "gene_index": 4087,
+        "gene_name": "EPN1",
+        "importance_score": 0.066813
+      },
+      {
+        "rank": 22,
+        "gene_index": 2102,
+        "gene_name": "CD320",
+        "importance_score": 0.065352
+      },
+      {
+        "rank": 23,
+        "gene_index": 14120,
+        "gene_name": "TRIM6",
+        "importance_score": 0.064547
+      },
+      {
+        "rank": 24,
+        "gene_index": 1792,
+        "gene_name": "CAPN9",
+        "importance_score": 0.064423
+      },
+      {
+        "rank": 25,
+        "gene_index": 14693,
+        "gene_name": "VEZT",
+        "importance_score": 0.064215
+      },
+      {
+        "rank": 26,
+        "gene_index": 1611,
+        "gene_name": "C4orf45",
+        "importance_score": 0.063977
+      },
+      {
+        "rank": 27,
+        "gene_index": 3028,
+        "gene_name": "CTNNA3",
+        "importance_score": 0.063957
+      },
+      {
+        "rank": 28,
+        "gene_index": 6858,
+        "gene_name": "KRTAP15-1",
+        "importance_score": 0.063858
+      },
+      {
+        "rank": 29,
+        "gene_index": 4908,
+        "gene_name": "GALNT9",
+        "importance_score": 0.06357
+      },
+      {
+        "rank": 30,
+        "gene_index": 5378,
+        "gene_name": "GREB1",
+        "importance_score": 0.063412
+      }
+    ]
+  },
+  "READ": {
+    "class_index": 23,
+    "num_samples": 375,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 5903,
+        "gene_name": "HSP90B3P",
+        "importance_score": 0.150023
+      },
+      {
+        "rank": 2,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.147756
+      },
+      {
+        "rank": 3,
+        "gene_index": 5044,
+        "gene_name": "GHITM",
+        "importance_score": 0.142182
+      },
+      {
+        "rank": 4,
+        "gene_index": 11627,
+        "gene_name": "SAMD7",
+        "importance_score": 0.138527
+      },
+      {
+        "rank": 5,
+        "gene_index": 5902,
+        "gene_name": "HSP90B1",
+        "importance_score": 0.134506
+      },
+      {
+        "rank": 6,
+        "gene_index": 9984,
+        "gene_name": "PLA2G4E",
+        "importance_score": 0.122737
+      },
+      {
+        "rank": 7,
+        "gene_index": 11540,
+        "gene_name": "RTP1",
+        "importance_score": 0.119516
+      },
+      {
+        "rank": 8,
+        "gene_index": 1164,
+        "gene_name": "BAP1",
+        "importance_score": 0.11837
+      },
+      {
+        "rank": 9,
+        "gene_index": 5794,
+        "gene_name": "HOXA10",
+        "importance_score": 0.118298
+      },
+      {
+        "rank": 10,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.113093
+      },
+      {
+        "rank": 11,
+        "gene_index": 10747,
+        "gene_name": "PYDC2",
+        "importance_score": 0.112516
+      },
+      {
+        "rank": 12,
+        "gene_index": 5090,
+        "gene_name": "GK2",
+        "importance_score": 0.106282
+      },
+      {
+        "rank": 13,
+        "gene_index": 1591,
+        "gene_name": "C2orf83",
+        "importance_score": 0.103295
+      },
+      {
+        "rank": 14,
+        "gene_index": 12715,
+        "gene_name": "SPAM1",
+        "importance_score": 0.096919
+      },
+      {
+        "rank": 15,
+        "gene_index": 5915,
+        "gene_name": "HSPB1",
+        "importance_score": 0.096739
+      },
+      {
+        "rank": 16,
+        "gene_index": 7370,
+        "gene_name": "LY6K",
+        "importance_score": 0.096633
+      },
+      {
+        "rank": 17,
+        "gene_index": 1807,
+        "gene_name": "CARD17",
+        "importance_score": 0.094725
+      },
+      {
+        "rank": 18,
+        "gene_index": 2532,
+        "gene_name": "CLDN22",
+        "importance_score": 0.092256
+      },
+      {
+        "rank": 19,
+        "gene_index": 11085,
+        "gene_name": "REN",
+        "importance_score": 0.092156
+      },
+      {
+        "rank": 20,
+        "gene_index": 13358,
+        "gene_name": "TCF23",
+        "importance_score": 0.091999
+      },
+      {
+        "rank": 21,
+        "gene_index": 5216,
+        "gene_name": "GOLGA6D",
+        "importance_score": 0.091682
+      },
+      {
+        "rank": 22,
+        "gene_index": 15454,
+        "gene_name": "ZNF560",
+        "importance_score": 0.091139
+      },
+      {
+        "rank": 23,
+        "gene_index": 14549,
+        "gene_name": "UNCX",
+        "importance_score": 0.090833
+      },
+      {
+        "rank": 24,
+        "gene_index": 5042,
+        "gene_name": "GH2",
+        "importance_score": 0.090676
+      },
+      {
+        "rank": 25,
+        "gene_index": 4555,
+        "gene_name": "FGB",
+        "importance_score": 0.09023
+      },
+      {
+        "rank": 26,
+        "gene_index": 8226,
+        "gene_name": "MYL9",
+        "importance_score": 0.089487
+      },
+      {
+        "rank": 27,
+        "gene_index": 14060,
+        "gene_name": "TRAPPC9",
+        "importance_score": 0.088566
+      },
+      {
+        "rank": 28,
+        "gene_index": 8502,
+        "gene_name": "NEUROD6",
+        "importance_score": 0.088412
+      },
+      {
+        "rank": 29,
+        "gene_index": 4715,
+        "gene_name": "FOXG1",
+        "importance_score": 0.088357
+      },
+      {
+        "rank": 30,
+        "gene_index": 5896,
+        "gene_name": "HSF5",
+        "importance_score": 0.087675
+      }
+    ]
+  },
+  "SARC": {
+    "class_index": 24,
+    "num_samples": 156,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 3060,
+        "gene_name": "CTXN3",
+        "importance_score": 0.067939
+      },
+      {
+        "rank": 2,
+        "gene_index": 4551,
+        "gene_name": "FFAR1",
+        "importance_score": 0.064392
+      },
+      {
+        "rank": 3,
+        "gene_index": 4981,
+        "gene_name": "GCNT7",
+        "importance_score": 0.064124
+      },
+      {
+        "rank": 4,
+        "gene_index": 12111,
+        "gene_name": "SLC10A6",
+        "importance_score": 0.063977
+      },
+      {
+        "rank": 5,
+        "gene_index": 12108,
+        "gene_name": "SLC10A3",
+        "importance_score": 0.062486
+      },
+      {
+        "rank": 6,
+        "gene_index": 6701,
+        "gene_name": "KLHL1",
+        "importance_score": 0.060231
+      },
+      {
+        "rank": 7,
+        "gene_index": 4422,
+        "gene_name": "FAU",
+        "importance_score": 0.060195
+      },
+      {
+        "rank": 8,
+        "gene_index": 2727,
+        "gene_name": "COL3A1",
+        "importance_score": 0.058827
+      },
+      {
+        "rank": 9,
+        "gene_index": 11709,
+        "gene_name": "SCN10A",
+        "importance_score": 0.05816
+      },
+      {
+        "rank": 10,
+        "gene_index": 5931,
+        "gene_name": "HTN3",
+        "importance_score": 0.057827
+      },
+      {
+        "rank": 11,
+        "gene_index": 13448,
+        "gene_name": "TFAMP1",
+        "importance_score": 0.057157
+      },
+      {
+        "rank": 12,
+        "gene_index": 7264,
+        "gene_name": "LRRC24",
+        "importance_score": 0.055195
+      },
+      {
+        "rank": 13,
+        "gene_index": 5003,
+        "gene_name": "GDPD4",
+        "importance_score": 0.055075
+      },
+      {
+        "rank": 14,
+        "gene_index": 1150,
+        "gene_name": "BAGE",
+        "importance_score": 0.054989
+      },
+      {
+        "rank": 15,
+        "gene_index": 4034,
+        "gene_name": "ENPP3",
+        "importance_score": 0.054172
+      },
+      {
+        "rank": 16,
+        "gene_index": 5899,
+        "gene_name": "HSP90AB1",
+        "importance_score": 0.053858
+      },
+      {
+        "rank": 17,
+        "gene_index": 14511,
+        "gene_name": "UGT2B4",
+        "importance_score": 0.05355
+      },
+      {
+        "rank": 18,
+        "gene_index": 10235,
+        "gene_name": "POU3F3",
+        "importance_score": 0.05304
+      },
+      {
+        "rank": 19,
+        "gene_index": 13683,
+        "gene_name": "TMEM126B",
+        "importance_score": 0.052783
+      },
+      {
+        "rank": 20,
+        "gene_index": 2636,
+        "gene_name": "CNBD1",
+        "importance_score": 0.052361
+      },
+      {
+        "rank": 21,
+        "gene_index": 14782,
+        "gene_name": "VWF",
+        "importance_score": 0.052086
+      },
+      {
+        "rank": 22,
+        "gene_index": 4727,
+        "gene_name": "FOXM1",
+        "importance_score": 0.050754
+      },
+      {
+        "rank": 23,
+        "gene_index": 8592,
+        "gene_name": "NKTR",
+        "importance_score": 0.050745
+      },
+      {
+        "rank": 24,
+        "gene_index": 3710,
+        "gene_name": "DSG1",
+        "importance_score": 0.050423
+      },
+      {
+        "rank": 25,
+        "gene_index": 14863,
+        "gene_name": "WFDC12",
+        "importance_score": 0.050158
+      },
+      {
+        "rank": 26,
+        "gene_index": 5586,
+        "gene_name": "HCRTR1",
+        "importance_score": 0.04944
+      },
+      {
+        "rank": 27,
+        "gene_index": 282,
+        "gene_name": "ADD3",
+        "importance_score": 0.049175
+      },
+      {
+        "rank": 28,
+        "gene_index": 175,
+        "gene_name": "ACTG1",
+        "importance_score": 0.04909
+      },
+      {
+        "rank": 29,
+        "gene_index": 4975,
+        "gene_name": "GCM1",
+        "importance_score": 0.049038
+      },
+      {
+        "rank": 30,
+        "gene_index": 4338,
+        "gene_name": "FAM187B",
+        "importance_score": 0.048782
+      }
+    ]
+  },
+  "SKCM": {
+    "class_index": 25,
+    "num_samples": 563,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 11627,
+        "gene_name": "SAMD7",
+        "importance_score": 0.13462
+      },
+      {
+        "rank": 2,
+        "gene_index": 13849,
+        "gene_name": "TMPRSS11B",
+        "importance_score": 0.11616
+      },
+      {
+        "rank": 3,
+        "gene_index": 11531,
+        "gene_name": "RTL1",
+        "importance_score": 0.114501
+      },
+      {
+        "rank": 4,
+        "gene_index": 14020,
+        "gene_name": "TPSD1",
+        "importance_score": 0.105363
+      },
+      {
+        "rank": 5,
+        "gene_index": 14204,
+        "gene_name": "TSHR",
+        "importance_score": 0.095375
+      },
+      {
+        "rank": 6,
+        "gene_index": 8605,
+        "gene_name": "NKX6-3",
+        "importance_score": 0.093053
+      },
+      {
+        "rank": 7,
+        "gene_index": 12680,
+        "gene_name": "SOX21",
+        "importance_score": 0.085167
+      },
+      {
+        "rank": 8,
+        "gene_index": 8594,
+        "gene_name": "NKX2-1",
+        "importance_score": 0.084174
+      },
+      {
+        "rank": 9,
+        "gene_index": 7875,
+        "gene_name": "MMP26",
+        "importance_score": 0.082607
+      },
+      {
+        "rank": 10,
+        "gene_index": 8622,
+        "gene_name": "NLRP14",
+        "importance_score": 0.082197
+      },
+      {
+        "rank": 11,
+        "gene_index": 4715,
+        "gene_name": "FOXG1",
+        "importance_score": 0.080331
+      },
+      {
+        "rank": 12,
+        "gene_index": 13848,
+        "gene_name": "TMPRSS11A",
+        "importance_score": 0.079022
+      },
+      {
+        "rank": 13,
+        "gene_index": 2528,
+        "gene_name": "CLDN18",
+        "importance_score": 0.078205
+      },
+      {
+        "rank": 14,
+        "gene_index": 2765,
+        "gene_name": "COPB2",
+        "importance_score": 0.077512
+      },
+      {
+        "rank": 15,
+        "gene_index": 7568,
+        "gene_name": "MAS1",
+        "importance_score": 0.077179
+      },
+      {
+        "rank": 16,
+        "gene_index": 13614,
+        "gene_name": "TLX2",
+        "importance_score": 0.076774
+      },
+      {
+        "rank": 17,
+        "gene_index": 8492,
+        "gene_name": "NEU2",
+        "importance_score": 0.076192
+      },
+      {
+        "rank": 18,
+        "gene_index": 3698,
+        "gene_name": "DSC1",
+        "importance_score": 0.075069
+      },
+      {
+        "rank": 19,
+        "gene_index": 6312,
+        "gene_name": "ISL1",
+        "importance_score": 0.074695
+      },
+      {
+        "rank": 20,
+        "gene_index": 12675,
+        "gene_name": "SOX14",
+        "importance_score": 0.074249
+      },
+      {
+        "rank": 21,
+        "gene_index": 14304,
+        "gene_name": "TTLL6",
+        "importance_score": 0.074183
+      },
+      {
+        "rank": 22,
+        "gene_index": 12320,
+        "gene_name": "SLC36A3",
+        "importance_score": 0.07395
+      },
+      {
+        "rank": 23,
+        "gene_index": 1110,
+        "gene_name": "B3GALT1",
+        "importance_score": 0.073721
+      },
+      {
+        "rank": 24,
+        "gene_index": 13713,
+        "gene_name": "TMEM156",
+        "importance_score": 0.073372
+      },
+      {
+        "rank": 25,
+        "gene_index": 13986,
+        "gene_name": "TP53INP2",
+        "importance_score": 0.072541
+      },
+      {
+        "rank": 26,
+        "gene_index": 6356,
+        "gene_name": "ITIH2",
+        "importance_score": 0.072332
+      },
+      {
+        "rank": 27,
+        "gene_index": 6659,
+        "gene_name": "KIR3DL2",
+        "importance_score": 0.072008
+      },
+      {
+        "rank": 28,
+        "gene_index": 7716,
+        "gene_name": "MEP1A",
+        "importance_score": 0.071458
+      },
+      {
+        "rank": 29,
+        "gene_index": 13452,
+        "gene_name": "TFAP2D",
+        "importance_score": 0.071098
+      },
+      {
+        "rank": 30,
+        "gene_index": 547,
+        "gene_name": "ANGPTL7",
+        "importance_score": 0.07071
+      }
+    ]
+  },
+  "STAD": {
+    "class_index": 26,
+    "num_samples": 197,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 11075,
+        "gene_name": "REG4",
+        "importance_score": 0.151802
+      },
+      {
+        "rank": 2,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.150251
+      },
+      {
+        "rank": 3,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.144946
+      },
+      {
+        "rank": 4,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.133408
+      },
+      {
+        "rank": 5,
+        "gene_index": 5498,
+        "gene_name": "GUCA2A",
+        "importance_score": 0.11215
+      },
+      {
+        "rank": 6,
+        "gene_index": 4555,
+        "gene_name": "FGB",
+        "importance_score": 0.108258
+      },
+      {
+        "rank": 7,
+        "gene_index": 11071,
+        "gene_name": "REG1A",
+        "importance_score": 0.107327
+      },
+      {
+        "rank": 8,
+        "gene_index": 11540,
+        "gene_name": "RTP1",
+        "importance_score": 0.106956
+      },
+      {
+        "rank": 9,
+        "gene_index": 11732,
+        "gene_name": "SCRG1",
+        "importance_score": 0.104911
+      },
+      {
+        "rank": 10,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.103593
+      },
+      {
+        "rank": 11,
+        "gene_index": 1752,
+        "gene_name": "CALR",
+        "importance_score": 0.101639
+      },
+      {
+        "rank": 12,
+        "gene_index": 2902,
+        "gene_name": "CRHR2",
+        "importance_score": 0.100895
+      },
+      {
+        "rank": 13,
+        "gene_index": 15518,
+        "gene_name": "ZNF648",
+        "importance_score": 0.100171
+      },
+      {
+        "rank": 14,
+        "gene_index": 11733,
+        "gene_name": "SCRIB",
+        "importance_score": 0.099757
+      },
+      {
+        "rank": 15,
+        "gene_index": 4150,
+        "gene_name": "ESR1",
+        "importance_score": 0.096391
+      },
+      {
+        "rank": 16,
+        "gene_index": 905,
+        "gene_name": "ASB11",
+        "importance_score": 0.094845
+      },
+      {
+        "rank": 17,
+        "gene_index": 3506,
+        "gene_name": "DLK1",
+        "importance_score": 0.093661
+      },
+      {
+        "rank": 18,
+        "gene_index": 14863,
+        "gene_name": "WFDC12",
+        "importance_score": 0.093566
+      },
+      {
+        "rank": 19,
+        "gene_index": 4706,
+        "gene_name": "FOXD1",
+        "importance_score": 0.092486
+      },
+      {
+        "rank": 20,
+        "gene_index": 14243,
+        "gene_name": "TSPYL6",
+        "importance_score": 0.092424
+      },
+      {
+        "rank": 21,
+        "gene_index": 10747,
+        "gene_name": "PYDC2",
+        "importance_score": 0.091672
+      },
+      {
+        "rank": 22,
+        "gene_index": 8159,
+        "gene_name": "MUC21",
+        "importance_score": 0.091043
+      },
+      {
+        "rank": 23,
+        "gene_index": 11627,
+        "gene_name": "SAMD7",
+        "importance_score": 0.090669
+      },
+      {
+        "rank": 24,
+        "gene_index": 4012,
+        "gene_name": "EMX2",
+        "importance_score": 0.090177
+      },
+      {
+        "rank": 25,
+        "gene_index": 11094,
+        "gene_name": "RERGL",
+        "importance_score": 0.087433
+      },
+      {
+        "rank": 26,
+        "gene_index": 2844,
+        "gene_name": "CPNE1",
+        "importance_score": 0.087186
+      },
+      {
+        "rank": 27,
+        "gene_index": 1734,
+        "gene_name": "CAGE1",
+        "importance_score": 0.086023
+      },
+      {
+        "rank": 28,
+        "gene_index": 3060,
+        "gene_name": "CTXN3",
+        "importance_score": 0.085311
+      },
+      {
+        "rank": 29,
+        "gene_index": 6304,
+        "gene_name": "IRX4",
+        "importance_score": 0.085199
+      },
+      {
+        "rank": 30,
+        "gene_index": 13370,
+        "gene_name": "TCL1A",
+        "importance_score": 0.084838
+      }
+    ]
+  },
+  "TGCT": {
+    "class_index": 27,
+    "num_samples": 57,
+    "top_genes": [
+      {
+        "rank": 1,
+        "gene_index": 11936,
+        "gene_name": "SFTPC",
+        "importance_score": 0.090982
+      },
+      {
+        "rank": 2,
+        "gene_index": 13332,
+        "gene_name": "TBX4",
+        "importance_score": 0.079648
+      },
+      {
+        "rank": 3,
+        "gene_index": 14120,
+        "gene_name": "TRIM6",
+        "importance_score": 0.068187
+      },
+      {
+        "rank": 4,
+        "gene_index": 6226,
+        "gene_name": "INSL6",
+        "importance_score": 0.066501
+      },
+      {
+        "rank": 5,
+        "gene_index": 13333,
+        "gene_name": "TBX5",
+        "importance_score": 0.065749
+      },
+      {
+        "rank": 6,
+        "gene_index": 8492,
+        "gene_name": "NEU2",
+        "importance_score": 0.065194
+      },
+      {
+        "rank": 7,
+        "gene_index": 15220,
+        "gene_name": "ZNF157",
+        "importance_score": 0.062622
+      },
+      {
+        "rank": 8,
+        "gene_index": 13852,
+        "gene_name": "TMPRSS11F",
+        "importance_score": 0.061621
+      },
+      {
+        "rank": 9,
+        "gene_index": 5791,
+        "gene_name": "HORMAD1",
+        "importance_score": 0.061469
+      },
+      {
+        "rank": 10,
+        "gene_index": 2844,
+        "gene_name": "CPNE1",
+        "importance_score": 0.061179
+      },
+      {
+        "rank": 11,
+        "gene_index": 8818,
+        "gene_name": "NT5DC2",
+        "importance_score": 0.060542
+      },
+      {
+        "rank": 12,
+        "gene_index": 1684,
+        "gene_name": "CA6",
+        "importance_score": 0.058899
+      },
+      {
+        "rank": 13,
+        "gene_index": 8159,
+        "gene_name": "MUC21",
+        "importance_score": 0.058091
+      },
+      {
+        "rank": 14,
+        "gene_index": 15218,
+        "gene_name": "ZNF154",
+        "importance_score": 0.057279
+      },
+      {
+        "rank": 15,
+        "gene_index": 11935,
+        "gene_name": "SFTPB",
+        "importance_score": 0.057213
+      },
+      {
+        "rank": 16,
+        "gene_index": 15257,
+        "gene_name": "ZNF225",
+        "importance_score": 0.05698
+      },
+      {
+        "rank": 17,
+        "gene_index": 8334,
+        "gene_name": "NARF",
+        "importance_score": 0.056029
+      },
+      {
+        "rank": 18,
+        "gene_index": 10214,
+        "gene_name": "PON3",
+        "importance_score": 0.055481
+      },
+      {
+        "rank": 19,
+        "gene_index": 13352,
+        "gene_name": "TCERG1L",
+        "importance_score": 0.055
+      },
+      {
+        "rank": 20,
+        "gene_index": 14125,
+        "gene_name": "TRIM65",
+        "importance_score": 0.054764
+      },
+      {
+        "rank": 21,
+        "gene_index": 12763,
+        "gene_name": "SPEM1",
+        "importance_score": 0.053964
+      },
+      {
+        "rank": 22,
+        "gene_index": 11075,
+        "gene_name": "REG4",
+        "importance_score": 0.053046
+      },
+      {
+        "rank": 23,
+        "gene_index": 1611,
+        "gene_name": "C4orf45",
+        "importance_score": 0.052404
+      },
+      {
+        "rank": 24,
+        "gene_index": 14105,
+        "gene_name": "TRIM40",
+        "importance_score": 0.050246
+      },
+      {
+        "rank": 25,
+        "gene_index": 14107,
+        "gene_name": "TRIM42",
+        "importance_score": 0.050054
+      },
+      {
+        "rank": 26,
+        "gene_index": 4574,
+        "gene_name": "FGF21",
+        "importance_score": 0.050004
+      },
+      {
+        "rank": 27,
+        "gene_index": 6830,
+        "gene_name": "KRT82",
+        "importance_score": 0.049588
+      },
+      {
+        "rank": 28,
+        "gene_index": 9251,
+        "gene_name": "OR6B3",
+        "importance_score": 0.048778
+      },
+      {
+        "rank": 29,
+        "gene_index": 6826,
+        "gene_name": "KRT79",
+        "importance_score": 0.048572
+      },
+      {
+        "rank": 30,
+        "gene_index": 38,
+        "gene_name": "ABCB11",
+        "importance_score": 0.048529
+      }
+    ]
+  }
+}

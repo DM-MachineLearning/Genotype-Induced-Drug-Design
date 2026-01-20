@@ -82,7 +82,7 @@ def encode_smiles(smiles: str, max_len: int) -> Optional[List[int]]:
 
 
 def load_smiles(input_csv: str, limit: Optional[int]) -> List[str]:
-    df = pd.read_csv(input_csv)
+    df = pd.read_csv(input_csv, usecols=[0])
     if "smiles" not in df.columns:
         raise ValueError("Input CSV must contain a 'smiles' column.")
     smiles = df["smiles"].dropna().astype(str).tolist()

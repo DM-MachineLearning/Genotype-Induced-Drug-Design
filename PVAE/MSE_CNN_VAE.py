@@ -2,10 +2,10 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import copy
-from Genotype_Induced_Drug_Design.PVAE.utils import celoss, apply_block_masking
+from Genotype_Induced_Drug_Design.PVAE.utils import apply_block_masking  # removed celoss import (unused after MSE)
 import math
 
-class CNNVAE(nn.Module):
+class MSECNNVAE(nn.Module):
     def __init__(self, input_dim: int, z_dim: int, num_classes: int = 2):
         super().__init__()
         self.input_length = input_dim 
@@ -101,8 +101,8 @@ class CNNVAE(nn.Module):
 
     def loss(self, x_dna, x_gene, r_dna, r_gene, mu, logvar, 
              labels=None, preds=None, lamb=1.0, alpha=10.0):
-        r_l_dna = celoss(x_dna.unsqueeze(1), r_dna.unsqueeze(1))
-        r_l_gene = celoss(x_gene.unsqueeze(1), r_gene.unsqueeze(1))
+        r_l_dna = F.mse_loss(r_dna, x_dna, reduction="mean")  # updated recon loss to MSE
+        r_l_gene = F.mse_loss(r_gene, x_gene, reduction="mean")  # updated recon loss to MSE
         recon_loss = r_l_dna + r_l_gene
         
         kl = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp(), dim=1)
@@ -332,5 +332,3 @@ class CNNVAE(nn.Module):
         }
         print(f"Model loaded from: {path}")
         return meta
-    
-

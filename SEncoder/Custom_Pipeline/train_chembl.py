@@ -21,6 +21,8 @@ from torch.utils.data import DataLoader, TensorDataset
 from smiles_encoder import SMILESEncoder
 from smiles_decoder import SMILESDecoder
 
+import matplotlib.pyplot as plt
+
 
 @dataclass
 class TrainBatch:
@@ -128,9 +130,23 @@ def train(args: argparse.Namespace) -> None:
     global_step = 0
     best_val = float("inf")
 
+    train_total_losses = []
+    train_recon_losses = []
+    train_kl_losses = []
+
+    val_total_losses = []
+    val_recon_losses = []
+    val_kl_losses = []
+
     for epoch in range(args.epochs):
         encoder.train()
         decoder.train()
+
+        train_total = 0.0
+        train_recon = 0.0
+        train_kl = 0.0
+        train_batches = 0
+
         for batch in train_loader:
             global_step += 1
             batch_t = prepare_batch(batch, device)
@@ -142,6 +158,11 @@ def train(args: argparse.Namespace) -> None:
             recon = ce_loss(logits.reshape(-1, logits.size(-1)), batch_t.decoder_target.reshape(-1))
             kl = compute_kl(mu, var)
             loss = recon + args.beta * kl
+
+            train_total += loss.item()
+            train_recon += recon.item()
+            train_kl += kl.item()
+            train_batches += 1
 
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
@@ -159,24 +180,51 @@ def train(args: argparse.Namespace) -> None:
 
             if global_step >= args.max_steps:
                 break
+        
+        train_total_losses.append(train_total / max(1, train_batches))
+        train_recon_losses.append(train_recon / max(1, train_batches))
+        train_kl_losses.append(train_kl / max(1, train_batches))
+
         # Validation
         encoder.eval()
         decoder.eval()
-        val_loss = 0.0
+
+        val_total = 0.0
+        val_recon = 0.0
+        val_kl = 0.0
         val_batches = 0
+
         with torch.no_grad():
             for batch in val_loader:
                 batch_t = prepare_batch(batch, device)
+
                 mu, var = encoder(batch_t.tokens)
                 latent = mu + torch.sqrt(var) * torch.randn_like(mu)
+
                 logits = decoder(latent, batch_t.decoder_input, mode="forced")
-                recon = ce_loss(logits.reshape(-1, logits.size(-1)), batch_t.decoder_target.reshape(-1))
+                recon = ce_loss(
+                    logits.reshape(-1, logits.size(-1)),
+                    batch_t.decoder_target.reshape(-1)
+                )
                 kl = compute_kl(mu, var)
                 loss = recon + args.beta * kl
-                val_loss += loss.item()
+
+                val_total += loss.item()
+                val_recon += recon.item()
+                val_kl += kl.item()
                 val_batches += 1
-        val_loss = val_loss / max(1, val_batches)
-        print(f"[val] epoch={epoch} val_loss={val_loss:.4f}")
+
+        val_total /= max(1, val_batches)
+        val_recon /= max(1, val_batches)
+        val_kl /= max(1, val_batches)
+
+        print(f"[val] epoch={epoch} val_loss={val_total:.4f}")
+
+        val_total_losses.append(val_total)
+        val_recon_losses.append(val_recon)
+        val_kl_losses.append(val_kl)
+
+        val_loss = val_total
 
         # Checkpoint
         if val_loss < best_val:
@@ -193,6 +241,41 @@ def train(args: argparse.Namespace) -> None:
         if global_step >= args.max_steps:
             break
 
+    epochs = range(1, len(train_total_losses) + 1)
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(epochs, train_total_losses, label="Train Total")
+    plt.plot(epochs, val_total_losses, label="Val Total")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.title("Total Loss")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(args.checkpoint_dir, "total_loss.png"))
+    plt.close()
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(epochs, train_recon_losses, label="Train Recon")
+    plt.plot(epochs, val_recon_losses, label="Val Recon")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.title("Reconstruction Loss")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(args.checkpoint_dir, "recon_loss.png"))
+    plt.close()
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(epochs, train_kl_losses, label="Train KL")
+    plt.plot(epochs, val_kl_losses, label="Val KL")
+    plt.xlabel("Epoch")
+    plt.ylabel("KL")
+    plt.title("KL Divergence")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(args.checkpoint_dir, "kl_loss.png"))
+    plt.close()
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train Transformer VAE on ChEMBL subset.")
@@ -200,13 +283,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--checkpoint_dir", type=str, default="checkpoints/chembl_sanity", help="Where to save checkpoints")
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--num_workers", type=int, default=0)
-    parser.add_argument("--epochs", type=int, default=1)
+    parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--max_steps", type=int, default=2000, help="Stop after this many steps (across epochs)")
     parser.add_argument("--n_layers", type=int, default=8)
     parser.add_argument("--embedding_dim", type=int, default=512)
     parser.add_argument("--latent_size", type=int, default=512)
     parser.add_argument("--dropout", type=float, default=0.0)
-    parser.add_argument("--lr", type=float, default=1e-4)
+    parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--weight_decay", type=float, default=1e-4)
     parser.add_argument("--warmup_steps", type=int, default=4000)
     parser.add_argument("--beta", type=float, default=0.001, help="KL weight")
